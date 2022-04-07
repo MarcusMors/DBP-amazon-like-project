@@ -41,16 +41,14 @@ body
   right: 0;
 }
 
-.cuadro
+.form
 {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 30px 5px 30px 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 35vw;
+  min-width: 300px;
   transform: translate(-50%,-50%);
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 15px;
@@ -60,7 +58,7 @@ h1
 {
   margin: 15px;
   text-align: center;
-  color: #ffffff;
+  color: #f0f0f0;
 }
 
 .datos
@@ -73,24 +71,37 @@ h1
   flex-wrap: wrap;
 }
 
-.mail
+.mail 
 {
-  background-repeat: no-repeat;
-  background-size: 10px;
-  background-position: 4px center;
+	width: 25vw;
+  min-width: 250px;
+	background-color: #f0f0f0;
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: 12% 88%;
+  margin-bottom: 10px;
+  
+}
+
+i
+{
+  text-align: center;
+  padding-top: 10px;
+	color: #acacac;
+	font-size: 1.1rem;
 }
 
 input
 {
-  padding: 8px;
-  margin-top: 10px;
-  margin-bottom: 3px;
-  border: 0;
-  outline: none;
-  width: 25vw;
+  background: none;
+	outline: none;
+	border: none;
+  line-height: 1;
+  padding: 8px 8px 8px 0px;
+  width: 21vw;
   border-style: none;
-  text-indent: 10px;
-  border-radius: 5px
+  border-radius: 5px;
+  min-width: 210px;
 }
 
 input::placeholder
@@ -98,6 +109,16 @@ input::placeholder
   font-family: Trebuchet MS;
 }
 
+input[type=checkbox]
+{
+  max-width: 10px; 
+  min-width: 10px;
+}
+label
+{
+  width: 25vw;
+  min-width: 250px;
+}
 .apart
 {
   display: flex;
@@ -114,17 +135,19 @@ input::placeholder
   flex-direction: row-reverse;
 }
 
+a
+{
+  text-decoration: none;
+}
 #forgot a
 {
   font-size: 0.8em;
-  color: white;
   text-align: right;
-  text-decoration: none;
-  color: #de7a09;
 }
 
 button
 {
+  min-width: 250px;
   cursor: pointer;
   margin: 10px;
   padding: 8px;
@@ -135,16 +158,21 @@ button
   border: 0px;
   outline: none;
   background-color: #de7a09;
+  color: #fff;
+}
+
+button:hover{
+  background-color: #b15e00;
 }
 
 #new
 {
   font-size: 0.8em;
-  color: white;
+  color: #f0f0f0;
 }
 
-#new a
+a:hover
 {
   color: #de7a09;
-  text-decoration: none;
+  text-decoration: underline;
 }
