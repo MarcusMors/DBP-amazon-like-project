@@ -13,3 +13,138 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* --------------------- Log in --------------------- */
+body
+{
+  margin: 0;
+  font-family: Trebuchet MS;
+}
+#bg /*960x640*/
+{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("img/fondo.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#bg::before
+{
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cuadro
+{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35vw;
+  transform: translate(-50%,-50%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+}
+
+h1
+{
+  margin: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.datos
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.mail
+{
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: 4px center;
+}
+
+input
+{
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  border: 0;
+  outline: none;
+  width: 25vw;
+  border-style: none;
+  text-indent: 10px;
+  border-radius: 5px
+}
+
+input::placeholder
+{
+  font-family: Trebuchet MS;
+}
+
+.apart
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+#forgot
+{
+  margin-right: 5vw;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#forgot a
+{
+  font-size: 0.8em;
+  color: white;
+  text-align: right;
+  text-decoration: none;
+  color: #de7a09;
+}
+
+button
+{
+  cursor: pointer;
+  margin: 10px;
+  padding: 8px;
+  border-radius: 25px;
+  font-family: Trebuchet MS;
+  width: 25vw;
+  border-style: solid;
+  border: 0px;
+  outline: none;
+  background-color: #de7a09;
+}
+
+#new
+{
+  font-size: 0.8em;
+  color: white;
+}
+
+#new a
+{
+  color: #de7a09;
+  text-decoration: none;
+}
