@@ -23,7 +23,7 @@ body
 {
   height: 100vh;
   width: 100vw;
-  background-image: url("img/fondo.png");
+  background-image: url("../assets/fondo.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -71,7 +71,7 @@ h1
   flex-wrap: wrap;
 }
 
-.mail 
+.mail
 {
 	width: 25vw;
   min-width: 250px;
@@ -80,7 +80,7 @@ h1
 	display: grid;
 	grid-template-columns: 12% 88%;
   margin-bottom: 10px;
-  
+
 }
 
 i
@@ -111,7 +111,7 @@ input::placeholder
 
 input[type=checkbox]
 {
-  max-width: 10px; 
+  max-width: 10px;
   min-width: 10px;
 }
 label
