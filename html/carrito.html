@@ -1,42 +1,151 @@
-<!--
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as
- published by the Free Software Foundation, either version 3 of the
- License, or (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Affero General Public License for more details.
-
- You should have received a copy of the GNU Affero General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
-
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="" />
-		<meta name="robots" content="index,follow" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>carrito</title>
-		<link rel="stylesheet" href="./css/normalize.css" />
-		<link rel="stylesheet" href="./css/index.css" />
-		<link href="https://fonts.googleapis.com/css2" />
-	</head>
+<html>
+<head>
+	<title>Carrito</title>
+    <link rel="stylesheet" href="../css/carrito.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="home.html"><img src="../assets/logo.svg" alt="logo"></a>
+        </div>
+        <form action="" class="searchbox">
+            <input name="name" type="text" placeholder="Search">
+        </form>
+        <div class="cart">
+            <a href="carrito.html"><img src="../assets/cart.png" alt="cart"></a>
+        </div>
+    </header>
+	<div id="cart-container" classs="container my-5"><!-- comenzando código de carrito de compras-->
+        <table width="100%">
+            <thead>
+                <tr> <!--encabezado de tablita-->
+                    <td>Eliminar</td>
+                    <td>Imagen</td>
+                    <td>Producto</td>
+                    <td>Precio</td>
+                    <td>Cantidad</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody> <!--contenido de la tabla-->
+            	<tr>
+            		<td><a href="#"><i class="fas fa-trash-alt"></i></a> </td>  <!--basurero-->
+            		<td><img src="../assets/1.jpg" alt=""></td>
+            		<td>
+            			<h5>Zapatilla 1</h5>
+            		</td>
+            		<td>
+            			<h5>S/225.00</h5>
+            		</td>
+            		<td>
+            			<input class="w-25 pl-1" value="1" type="Número">
+            		</td>
+            		<td>
+            			<h5>S/225.00</h5>
+            		</td>
+            	</tr>
 
-	<body>
-		<header></header>
+            	<tr>
+            		<td><a href="#"><i class="fas fa-trash-alt"> </td>  <!--basurero-->
+            		<td><img src="../assets/2.jpg" alt=""></td>
+            		<td>
+            			<h5>Zapatilla 2</h5>
+            		</td>
+            		<td>
+            			<h5>S/250.00</h5>
+            		</td>
+            		<td>
+            			<input class="w-25 pl-1" value="1" type="Número">
+            		</td>
+            		<td>
+            			<h5>S/250.00</h5>
+            		</td>
+            	</tr>
 
-		<main>
-			<section></section>
-		</main>
+            	<tr>
+            		<td><a href="#"><i class="fas fa-trash-alt"> </td>  <!--basurero-->
+            		<td><img src="../assets/3.jpg" alt=""></td>
+            		<td>
+            			<h5>Zapatillas 3</h5>
+            		</td>
+            		<td>
+            			<h5>S/70.00</h5>
+            		</td>
+            		<td>
+            			<input class="w-25 pl-1" value="1" type="Número">
+            		</td>
+            		<td>
+            			<h5>S/70.00</h5>
+            		</td>
+            	</tr>
 
-		<footer></footer>
+            	<tr>
+            		<td><a href="#"><i class="fas fa-trash-alt"> </td>  <!--basurero-->
+            		<td><img src="../assets/4.jpg" alt=""></td>
+            		<td>
+            			<h5>Zapatillas 4</h5>
+            		</td>
+            		<td>
+            			<h5>S/65.00</h5>
+            		</td>
+            		<td>
+            			<input class="w-25 pl-1" value="1" type="Número">
+            		</td>
+            		<td>
+            			<h5>S/65.00</h5>
+            		</td>
+            	</tr>
 
-		<script src="./carrito.js"></script>
-	</body>
+            	<tr>
+            		<td><a href="#"><i class="fas fa-trash-alt"> </td>  <!--basurero-->
+            		<td><img src="../assets/5.jpg" alt=""></td>
+            		<td>
+            			<h5>Zapatos 5</h5>
+            		</td>
+            		<td>
+            			<h5>S/135.00</h5>
+            		</td>
+            		<td>
+            			<input class="w-25 pl-1" value="1" type="Número">
+            		</td>
+            		<td>
+            			<h5>S/135.00</h5>
+            		</td>
+            	</tr>
+            </tbody>
+        </table>
+    </div>
+
+    <section id="cart-bottom" class="container"> 
+    	<div class="row">
+    		<div class="coupon col-lg-6 col-md-6 col-12 mb-4"><!--Tabla de cupones-->
+    			<h5>CUPÓN</h5>
+    			<p>Ingresa tu cupón de descuento si tienes uno</p>
+                <input type="text" placeholder="Codigo de cupon">
+                <button>APLICAR CUPÓN</button>
+    		</div>
+    	</div>
+        <div class="row">
+            <div class="total col-lg-6 col-md-6 col-12"><!--Tabla de carrito total-->
+                <h5>CARRITO TOTAL</h5>
+                <div class="d-flex justify-content-between">
+                    <h6>Subtotal</h6>
+                    <p>S/215.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h6>Envío</h6>
+                    <p>S/255.00</p>
+                </div>
+                <hr class="second-hr">
+                <div class="d-flex justify-content-between">
+                    <h6>Total</h6>
+                    <p>S/470.00</p>
+                </div>
+                <button class="ml-auto">PROCEDER A PAGAR</button>
+            </div>
+        </div>
+    </section>
+
+</body>
 </html>
-<!--
-//-->

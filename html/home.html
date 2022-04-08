@@ -1,42 +1,110 @@
-<!--
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as
- published by the Free Software Foundation, either version 3 of the
- License, or (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Affero General Public License for more details.
-
- You should have received a copy of the GNU Affero General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
-
 <!DOCTYPE html>
-<html lang="es">
+<html>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="" />
-		<meta name="robots" content="index,follow" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>home</title>
-		<link rel="stylesheet" href="./css/normalize.css" />
-		<link rel="stylesheet" href="./css/index.css" />
+		<title>Home</title>
+		<link rel="stylesheet" href="../css/home.css" />
 		<link href="https://fonts.googleapis.com/css2" />
-	</head>
+        <script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
+    </head> 
+    <body>
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <a href="home.html"><img src="../assets/logo.svg" alt="logo"></a>
+            </div>
 
-	<body>
-		<header></header>
-
-		<main>
-			<section></section>
-		</main>
-
-		<footer></footer>
-
-		<script src="./home.js"></script>
-	</body>
-</html>
-<!--
-//-->
+            <div class="search-box">
+                <input name="name" type="text" placeholder="">
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="cart">
+                <a href="carrito.html"><img src="../assets/cart.png" alt="cart"></a>
+            </div>   
+        </header>
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="">Electrónicos</a></li>
+                <li><a href="">Computadoras</a></li>
+                <li><a href="">Smart Home</a></li>
+                <li><a href="">Arte y Artesanías</a></li>
+                <li><a href="">Insumos para mascotas</a></li>
+            </ul>
+        </div>
+        <!-- CONTENIDO -->
+        <div class="contents">
+            <div class="products">
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen1.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen2.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen3.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen4.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen5.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen6.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen7.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen8.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product-container">
+                        <img src="../assets/imagen9.jpg" alt="">
+                        <h3>---$</h3>
+                        <p>--------------------------------------------</p>
+                    </div> 
+                </a>                  
+            </div>
+        </div>
+    </body>
+    </html>

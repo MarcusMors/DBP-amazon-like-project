@@ -1,0 +1,170 @@
+/*De: Weird, Header Amazon*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS";
+}
+
+.header {
+    background-color:#131921;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.header img {
+    margin: 30px;
+    height: 35px;
+    width: auto;
+}
+
+input[type=text] { 
+    width: 600px;
+    padding: 12px 20px;
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.sidebar {
+    width: 18%;
+    height: 100%;
+    background: white;
+    overflow: auto;
+    display: block;
+    float: left;
+    
+}
+.sidebar ul li a{
+    text-decoration:none ;
+    color:#131921
+}
+.sidebar ul li,h2 {
+    list-style: none;
+    color:#131921;
+    font-size: 17px;
+    padding: 12px 10px;
+
+}
+.sidebar ul li:hover {
+    background:#ffa43f ;
+}
+
+
+input[type=text] { 
+    width: 600px;
+    padding: 12px 20px;
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+input[type=text]:focus {
+    border: 3px solid #e19946;
+}
+
+
+
+/*cart*/
+
+#cart-container table{
+	overflow-x: auto;
+}
+
+#cart-container table{
+	border-collapse:  collapse;
+	width:  100%;
+	table-layout: fixed;
+	white-space: nowrap;
+}
+
+#cart-container table thead{
+	font-weight: 700; /*peso o grueso de la letra*/
+}
+
+#cart-container table thead td{  /*cabezera de mi table*/
+	background: #131921;
+	color:  #fff;
+	border:  none;
+	padding:  6px 0;
+}
+
+#cart-container table td{
+	border: 1px solid #131921;
+	text-align: center;
+}
+
+#cart-container table td:nth-child(1){ /*basurero*/
+	width: 100px;
+}
+
+#cart-container table td:nth-child(2),
+#cart-container table td:nth-child(3){ 
+	width: 200px;
+}
+
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6){ 
+	width: 170px;
+}
+
+#cart-container table tbody img{
+	width:  100px;
+	height: 80px;
+	object-fit:  cover;
+}
+
+#cart-container table tbody i{ /*color del basurero*/
+	color: #8d8c89;
+}
+
+#cart-bottom .coupon>div,
+#cart-bottom .total>div{
+	border:  1px solid #131921;
+}
+
+#cart-bottom .coupon h5,
+#cart-bottom .total h5{
+	background: #131921;
+	color:  #fff;
+	border:  none;
+	padding:  6px 12px;
+	font-weight: 700px;
+}
+
+#cart-bottom .coupon p,
+#cart-bottom .coupon input{
+	padding:  0 12px;
+
+}
+
+#cart-bottom .coupon input{
+	height: 44px;
+}
+
+#cart-bottom .coupon input,
+#cart-bottom .coupon button{
+	margin: 0 0 20px 12px;
+}
+
+#cart-bottom .total div>div{
+	padding:  0 12px;
+}
+
+#cart-bottom .total h6{
+	color: #000000;
+}
+
+.second-hr{
+	background: #131921;
+	width: 100%;
+	height: 1px;
+}
+
+#cart-bottom .total div>button{
+	margin: 0 12px 20px 0;
+	display: flex;
+	justify-self: flex-end;
+}

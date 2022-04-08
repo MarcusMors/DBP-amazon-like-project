@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS";
+}
+a {
+    text-decoration:none ;
+    color:#131921
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: white;
+}
+.header {
+    background-color:#131921;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.header img {
+    margin: 30px;
+    height: 35px;
+    width: auto;
+}
+
+input[type=text] { 
+    width: 600px;
+    padding: 12px 20px;
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.sidebar {
+    width: 18%;
+    height: 100%;
+    background: white;
+    overflow: auto;
+    display: block;
+    float: left;
+    
+}
+.sidebar ul li a{
+    text-decoration:none ;
+    color:#131921
+}
+.sidebar ul li,h2 {
+    list-style: none;
+    color:#131921;
+    font-size: 17px;
+    padding: 12px 10px;
+
+}
+.sidebar ul li:hover {
+    background:#ffa43f ;
+}
+
+.products {
+    display: flex;
+    flex-wrap:wrap;
+    margin-left: 18%;
+    background-color:#eaeded;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.product-container{
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+    background: white;
+    margin: 10px;
+    border-radius: 8px;
+
+}
+.product-container img  {
+    height: 150px;
+    max-width:200px;
+}
+.product-container:hover{
+    border: 1px solid #e19946 ;
+}
