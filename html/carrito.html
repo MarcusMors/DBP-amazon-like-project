@@ -2,20 +2,29 @@
 <html>
 <head>
 	<title>Carrito</title>
-    <link rel="stylesheet" href="../css/carrito.css">
+	<link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/carrito.css"/>
+	<link rel="stylesheet" href="../css/home.css"/>
+	<link href="https://fonts.googleapis.com/css2" />
+	<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="home.html"><img src="../assets/logo.svg" alt="logo"></a>
-        </div>
-        <form action="" class="searchbox">
-            <input name="name" type="text" placeholder="Search">
-        </form>
-        <div class="cart">
-            <a href="carrito.html"><img src="../assets/cart.png" alt="cart"></a>
-        </div>
-    </header>
+	<header class="header">
+		<div class="logo">
+			<a href="home.html"><img src="../assets/logo.svg" alt="logo"></a>
+		</div>
+		<div class="search-box">
+			<input name="name" type="text" placeholder="Search">
+			<button type="submit" class="search-btn">
+				<i class="fas fa-search" style="color: white;"></i>
+			</button>
+		</div>
+		<div class="cart">
+			<div class="cart">
+				<a href="carrito.html"><img src="../assets/cart.png" alt="cart"></a>
+			</div>
+		</div>   
+	</header>
 	<div id="cart-container" classs="container my-5"><!-- comenzando código de carrito de compras-->
         <table width="100%">
             <thead>

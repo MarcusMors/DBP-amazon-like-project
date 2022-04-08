@@ -14,24 +14,33 @@ body {
 }
 .header {
     background-color:#131921;
-    display: flex;
-    justify-content: space-evenly;
-
+    height: 50px;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    align-items: center;
 }
 .header img {
-    margin: 30px;
+    display: flex;
     height: 35px;
     width: auto;
+    margin: 0px auto;
 }
 
 input[type=text] { 
-    width: 600px;
-    padding: 12px 20px;
-    margin: 20px;
+    margin-left:10px;
+    width: 80%;
+    height: 32px;
     box-sizing: border-box;
     border-radius: 4px;
     border: none;
     outline: none;
+    padding-left: 10px;
+}
+button{
+    background-color: transparent;
+    border: none;
+    outline:none;
+    cursor: pointer;
 }
 .sidebar {
     width: 18%;

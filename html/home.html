@@ -5,6 +5,7 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Home</title>
+        <link rel="stylesheet" href="../css/normalize.css" />
 		<link rel="stylesheet" href="../css/home.css" />
 		<link href="https://fonts.googleapis.com/css2" />
         <script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
@@ -15,16 +16,16 @@
             <div class="logo">
                 <a href="home.html"><img src="../assets/logo.svg" alt="logo"></a>
             </div>
-
             <div class="search-box">
                 <input name="name" type="text" placeholder="">
                 <button type="submit" class="search-btn">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" style="color: white;"></i>
                 </button>
             </div>
-            
             <div class="cart">
-                <a href="carrito.html"><img src="../assets/cart.png" alt="cart"></a>
+                <div class="cart">
+                    <a href="carrito.html"><img src="../assets/cart.png" alt="cart"></a>
+                </div>
             </div>   
         </header>
         <!-- SIDEBAR -->
@@ -43,6 +44,7 @@
             <div class="products">
                 <a href="">
                     <div class="product-container">
+                        <i class="fa-regular fa-cart-shopping"></i>
                         <img src="../assets/imagen1.jpg" alt="">
                         <h3>---$</h3>
                         <p>--------------------------------------------</p>
