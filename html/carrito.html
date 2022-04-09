@@ -4,6 +4,7 @@
 	<title>Carrito</title>
 	<link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/carrito.css"/>
+	<link rel="stylesheet" href="../css/index.css" />
 	<link rel="stylesheet" href="../css/home.css"/>
 	<link href="https://fonts.googleapis.com/css2" />
 	<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
@@ -14,8 +15,8 @@
 			<a href="home.html"><img src="../assets/logo.svg" alt="logo"></a>
 		</div>
 		<div class="search-box">
-			<input name="name" type="text" placeholder="Search">
-			<button type="submit" class="search-btn">
+			<input class="srch-inp" name="name" type="text" placeholder="Search">
+			<button class="srch-btn" type="submit" class="search-btn">
 				<i class="fas fa-search" style="color: white;"></i>
 			</button>
 		</div>
@@ -25,7 +26,17 @@
 			</div>
 		</div>   
 	</header>
-	<div id="cart-container" classs="container my-5"><!-- comenzando código de carrito de compras-->
+	<div class="sidebar">
+		<h2>Categorias</h2>
+		<ul>
+			<li><a href="">Electrónicos</a></li>
+			<li><a href="">Computadoras</a></li>
+			<li><a href="">Smart Home</a></li>
+			<li><a href="">Arte y Artesanías</a></li>
+			<li><a href="">Insumos para mascotas</a></li>
+		</ul>
+	</div>
+	<div id="cart-container" class="container"><!-- comenzando código de carrito de compras-->
         <table width="100%">
             <thead>
                 <tr> <!--encabezado de tablita-->
@@ -48,7 +59,7 @@
             			<h5>S/225.00</h5>
             		</td>
             		<td>
-            			<input class="w-25 pl-1" value="1" type="Número">
+            			<input type="number" id="quantity" name="quantity" min="0" value="1">
             		</td>
             		<td>
             			<h5>S/225.00</h5>
@@ -65,7 +76,7 @@
             			<h5>S/250.00</h5>
             		</td>
             		<td>
-            			<input class="w-25 pl-1" value="1" type="Número">
+            			<input type="number" id="quantity" name="quantity" min="0" value="1">
             		</td>
             		<td>
             			<h5>S/250.00</h5>
@@ -82,7 +93,7 @@
             			<h5>S/70.00</h5>
             		</td>
             		<td>
-            			<input class="w-25 pl-1" value="1" type="Número">
+            			<input type="number" id="quantity" name="quantity" min="0" value="1">
             		</td>
             		<td>
             			<h5>S/70.00</h5>
@@ -99,7 +110,7 @@
             			<h5>S/65.00</h5>
             		</td>
             		<td>
-            			<input class="w-25 pl-1" value="1" type="Número">
+            			<input type="number" id="quantity" name="quantity" min="0" value="1">
             		</td>
             		<td>
             			<h5>S/65.00</h5>
@@ -116,7 +127,7 @@
             			<h5>S/135.00</h5>
             		</td>
             		<td>
-            			<input class="w-25 pl-1" value="1" type="Número">
+            			<input type="number" id="quantity" name="quantity" min="0" value="1">
             		</td>
             		<td>
             			<h5>S/135.00</h5>
@@ -124,37 +135,38 @@
             	</tr>
             </tbody>
         </table>
+		<section id="cart-bottom" class="container"> 
+			<div class="row">
+				<div class="coupon col-lg-6 col-md-6 col-12 mb-4"><!--Tabla de cupones-->
+					<h5>CUPÓN</h5>
+					<p>Ingresa tu cupón de descuento si tienes uno</p>
+					<input type="text" placeholder="Codigo de cupon">
+					<button>APLICAR CUPÓN</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="total col-lg-6 col-md-6 col-12"><!--Tabla de carrito total-->
+					<h5>CARRITO TOTAL</h5>
+					<div class="d-flex justify-content-between">
+						<h6>Subtotal</h6>
+						<p>S/215.00</p>
+					</div>
+					<div class="d-flex justify-content-between">
+						<h6>Envío</h6>
+						<p>S/255.00</p>
+					</div>
+					<hr class="second-hr">
+					<div class="d-flex justify-content-between">
+						<h6>Total</h6>
+						<p>S/470.00</p>
+					</div>
+					<button class="ml-auto">PROCEDER A PAGAR</button>
+				</div>
+			</div>
+		</section>
     </div>
 
-    <section id="cart-bottom" class="container"> 
-    	<div class="row">
-    		<div class="coupon col-lg-6 col-md-6 col-12 mb-4"><!--Tabla de cupones-->
-    			<h5>CUPÓN</h5>
-    			<p>Ingresa tu cupón de descuento si tienes uno</p>
-                <input type="text" placeholder="Codigo de cupon">
-                <button>APLICAR CUPÓN</button>
-    		</div>
-    	</div>
-        <div class="row">
-            <div class="total col-lg-6 col-md-6 col-12"><!--Tabla de carrito total-->
-                <h5>CARRITO TOTAL</h5>
-                <div class="d-flex justify-content-between">
-                    <h6>Subtotal</h6>
-                    <p>S/215.00</p>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <h6>Envío</h6>
-                    <p>S/255.00</p>
-                </div>
-                <hr class="second-hr">
-                <div class="d-flex justify-content-between">
-                    <h6>Total</h6>
-                    <p>S/470.00</p>
-                </div>
-                <button class="ml-auto">PROCEDER A PAGAR</button>
-            </div>
-        </div>
-    </section>
+
 
 </body>
 </html>
