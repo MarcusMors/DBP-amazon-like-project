@@ -1,103 +1,80 @@
+/**
+ * Copyright (C) 2022 José Enrique Vilca Campana
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-/*cart*/
-
-#cart-container table{
-	overflow-x: auto;
+main{
+	max-width: 100vw;
 }
 
-#cart-container table{
-	border-collapse:  collapse;
-	width:  100%;
-	table-layout: fixed;
-	white-space: nowrap;
+.cart-container{
+	width: fit-content;
+	margin: 0px auto;
 }
 
-#cart-container table thead{
-	font-weight: 700; /*peso o grueso de la letra*/
+.cart-container > *{
+	border-collapse: collapse;
 }
 
-#cart-container table thead td{  /*cabezera de mi table*/
-	background: #131921;
-	color:  #fff;
-	border:  none;
-	padding:  6px 0;
+.cart-container>  table > thead >tr{
+	background-color: #131921;
+	color: #fff;
 }
 
-#cart-container table td{
+.cart-container>  table > thead >tr>td{
+padding: 30px;
+margin: 0px auto;
+}
+
+.cart-container > table{
 	border: 1px solid #131921;
-	text-align: center;
+}
+tr td{
+	border: 1px solid #131921;
 }
 
-#cart-container table td:nth-child(1){ /*basurero*/
+.cart-container > img{
 	width: 100px;
 }
 
-#cart-container table td:nth-child(2),
-#cart-container table td:nth-child(3){ 
-	width: 200px;
+td >input{
+	/* width: 100%; */
+	width: 60px;
+	/* width: min-content; */
+	height: 15px;
+	background-color: #e6e6e6;
+	border-radius: 10px;
+	border: none;
 }
 
-#cart-container table td:nth-child(4),
-#cart-container table td:nth-child(5),
-#cart-container table td:nth-child(6){ 
-	width: 170px;
+.item-container > img{
+	max-width: 320px;
+	max-height: 200px;
 }
 
-#cart-container table tbody img{
-	width:  100px;
-	height: 80px;
-	object-fit:  cover;
-}
 
-#cart-container table tbody i{ /*color del basurero*/
-	color: #8d8c89;
-}
-
-#cart-bottom .coupon>div,
-#cart-bottom .total>div{
-	border:  1px solid #131921;
-}
-
-#cart-bottom .coupon h5,
-#cart-bottom .total h5{
-	background: #131921;
-	color:  #fff;
-	border:  none;
-	padding:  6px 12px;
-	font-weight: 700px;
-}
-
-#cart-bottom .coupon p,
-#cart-bottom .coupon input{
-	padding:  0 12px;
+.delete-btn{
+	/* width: 100px; */
+	/* size: 100px 100px; */
+	margin: 0px auto;
+	border: 1px solid;
+	padding: 30px;
 
 }
 
-#cart-bottom .coupon input{
-	height: 44px;
+.delete-btn > i{
+	font-size: 20px;
 }
 
-#cart-bottom .coupon input,
-#cart-bottom .coupon button{
-	margin: 0 0 20px 12px;
-}
-
-#cart-bottom .total div>div{
-	padding:  0 12px;
-}
-
-#cart-bottom .total h6{
-	color: #000000;
-}
-
-.second-hr{
-	background: #131921;
-	width: 100%;
-	height: 1px;
-}
-
-#cart-bottom .total div>button{
-	margin: 0 12px 20px 0;
-	display: flex;
-	justify-self: flex-end;
-}
