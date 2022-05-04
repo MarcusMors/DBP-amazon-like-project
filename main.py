@@ -31,7 +31,7 @@ def login():
     for key, value in data.items():
         data[key] = request.form.get(key)
 
-    return render_template("index.html", **data)
+    return render_template("profile.html", **data)
 
 
 if __name__ == '__main__':
