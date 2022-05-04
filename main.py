@@ -31,7 +31,9 @@ def profile():
     for key, value in data.items():
         data[key] = request.form.get(key)
 
-    return render_template("profile.html", **data)
+    context = {"data": data}
+
+    return render_template("profile.html", **context)
 
 
 if __name__ == '__main__':
