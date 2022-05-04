@@ -1,0 +1,7 @@
+{% macro include_css(css_file) %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/{{css_file}}.css')}}" />
+{% endmacro %}
+<!--  -->
+{% macro include_asset(asset_file) %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/{{asset_file}}')}}" />
+{% endmacro %}
