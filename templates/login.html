@@ -20,8 +20,8 @@
 		<meta name="description" content="" />
 		<meta name="robots" content="index,follow" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Register</title>
-		<link rel="icon" href="../assets/icon.png">
+		<title>Login</title>
+		<link rel="icon" href="../assets/icon.png" />
 		<link rel="stylesheet" href="../css/normalize.css" />
 		<link rel="stylesheet" href="../css/index.css" />
 		<link href="https://fonts.googleapis.com/css2" />
@@ -31,32 +31,22 @@
 	<body>
 		<div id="bg">
 			<div class="form">
-				<img src="../assets/logo.svg">
-				<h1>Registrarse</h1>
+				<img src="../assets/logo.svg" />
+				<h1>Iniciar sesión</h1>
 				<div class="datos">
 					<div class="mail">
 						<i class="fas fa-user"></i>
-						<input type="text" placeholder="Usuario">
-					</div>
-					<div class="mail">
-						<i class="fas fa-envelope"></i>
-						<input type="email" placeholder="E-mail">
+						<input type="email" placeholder="Usuario o email" />
 					</div>
 					<div class="mail">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Contraseña">
-					</div>
-					<div class="mail">
-						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Confirmar Contraseña">
+						<input type="password" placeholder="Contraseña" />
 					</div>
 				</div>
-
+				<span id="forgot"><a href="">¿Olvidaste la contraseña?</a></span>
 				<div class="apart">
-					<button>Registrarse</button>
-					<label><input type="checkbox"><span id=new> Acepto los <a href="">Términos y Condiciones</a>
-						y la <a href="">Política de Privacidad</a></span></label>
-					<span id=new>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></span>
+					<button>Ingresar</button>
+					<span id="new">¿No tienes una cuenta? <a href="register">Crea una.</a></span>
 				</div>
 			</div>
 		</div>

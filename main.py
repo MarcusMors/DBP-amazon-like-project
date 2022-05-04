@@ -17,17 +17,17 @@ def index():
 
 
 @app.route('/login')
-def index():
+def login():
     return render_template("login.html")
 
 
 @app.route('/register')
-def index():
+def register():
     return render_template("register.html")
 
 
 @app.route("/profile", methods=["POST"])
-def login():
+def profile():
     for key, value in data.items():
         data[key] = request.form.get(key)
 

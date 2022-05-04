@@ -1,0 +1,62 @@
+{%extends "auth_page_layout.html"%}
+<!--  -->
+{%block title%}Register{%endblock%}
+<!--  -->
+{%block head%}
+<meta charset="UTF-8" />
+<meta name="description" content="" />
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="icon" href="../assets/icon.png" />
+<link rel="stylesheet" href="../css/normalize.css" />
+<link rel="stylesheet" href="../css/index.css" />
+
+<link href="https://fonts.googleapis.com/css2" />
+<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
+
+{%endblock%} {%block body%}
+<div id="bg">
+	<form action="{{url_for('profile')}}" , method="post">
+		<a href="home.html"><img class="logo-log" src="../assets/logo.svg" /></a>
+		<h1>Registrarse</h1>
+		<div class="datos">
+			<div class="mail">
+				<i class="fas fa-user"></i>
+				<input class="log-inp" type="text" name="username" placeholder="Tu usuario" />
+			</div>
+			<div class="mail">
+				<i class="fas fa-envelope"></i>
+				<input class="log-inp" type="email" name="email" placeholder="ejemplo@domain.com" />
+			</div>
+			<div class="mail">
+				<i class="fas fa-lock"></i>
+				<input
+					class="log-inp"
+					type="password"
+					name="password"
+					placeholder="Crea una contraseña"
+				/>
+			</div>
+			<div class="mail">
+				<i class="fas fa-lock"></i>
+				<input class="log-inp" type="password" placeholder="Repite tu contraseña" />
+			</div>
+		</div>
+
+		<div class="apart">
+			<input type="submit" value="Registrarse" class="btn-log" />
+			<label
+				><input type="checkbox" /><span id="new">
+					Acepto los <a class="log-btn" href="">Términos y Condiciones</a> y la
+					<a class="log-btn" href="">Política de Privacidad</a>.</span
+				></label
+			>
+			<span id="new"
+				>¿Ya tienes una cuenta?
+				<a class="log-btn" href="login.html">Inicia sesión.</a></span
+			>
+		</div>
+	</form>
+</div>
+{%endblock%}
