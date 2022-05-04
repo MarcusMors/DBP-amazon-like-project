@@ -1,54 +1,40 @@
-<!--
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as
- published by the Free Software Foundation, either version 3 of the
- License, or (at your option) any later version.
+{%extends "auth_page_layout.html"%}
+<!--  -->
+{%block title%}Register{%endblock%}
+<!--  -->
+{%block head%}
+<meta charset="UTF-8" />
+<meta name="description" content="" />
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Affero General Public License for more details.
+<link rel="icon" href="../assets/icon.png" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
 
- You should have received a copy of the GNU Affero General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
+<link href="https://fonts.googleapis.com/css2" />
+<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="" />
-		<meta name="robots" content="index,follow" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Login</title>
-		<link rel="icon" href="../assets/icon.png" />
-		<link rel="stylesheet" href="../css/normalize.css" />
-		<link rel="stylesheet" href="../css/index.css" />
-		<link href="https://fonts.googleapis.com/css2" />
-		<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
-	</head>
-
-	<body>
-		<div id="bg">
-			<div class="form">
-				<img src="../assets/logo.svg" />
-				<h1>Iniciar sesión</h1>
-				<div class="datos">
-					<div class="mail">
-						<i class="fas fa-user"></i>
-						<input type="email" placeholder="Usuario o email" />
-					</div>
-					<div class="mail">
-						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Contraseña" />
-					</div>
-				</div>
-				<span id="forgot"><a href="">¿Olvidaste la contraseña?</a></span>
-				<div class="apart">
-					<button>Ingresar</button>
-					<span id="new">¿No tienes una cuenta? <a href="register">Crea una.</a></span>
-				</div>
+{%endblock%} {%block body%}
+<div id="bg">
+	<div class="form">
+		<img src="{{url_for('static', filename='assets/logo.svg')}}" />
+		<h1>Iniciar sesión</h1>
+		<div class="datos">
+			<div class="mail">
+				<i class="fas fa-user"></i>
+				<input type="email" placeholder="Usuario o email" />
+			</div>
+			<div class="mail">
+				<i class="fas fa-lock"></i>
+				<input type="password" placeholder="Contraseña" />
 			</div>
 		</div>
-	</body>
-</html>
+		<span id="forgot"><a href="">¿Olvidaste la contraseña?</a></span>
+		<div class="apart">
+			<button>Ingresar</button>
+			<span id="new">¿No tienes una cuenta? <a href="register">Crea una.</a></span>
+		</div>
+	</div>
+</div>
+{%endblock%}
