@@ -20,7 +20,8 @@ users = {
 def index():
     user_ip = request.remote_addr
     if(users.get(user_ip, False) == True):  # is logged
-        return render_template("welcome.html")
+        context = {"data": data}
+        return render_template("welcome.html", **context)
     return render_template("login.html")
 
 
