@@ -29,10 +29,19 @@
 	</div>
 </header>
 {%endblock%}{%block content%}
-<h1>LOS PRODUCTOS</h1>
-{%for product in products%}
-<img src="images/{{product.filename}}"></img>
-<p>{{product.title}}</p>
-<p>{{product.description}}</p>
-<p>{{product.price}}</p>
-{%endfor%} {%endblock%}
+<div class="contents">
+	<div class="products">
+		{%for product in products%}
+		<a class="product-ref" href="">
+			<div class="product-container">
+				<i class="fa-regular fa-cart-shopping"></i>
+				<img src="images/{{product.filename}}"></img>
+				<p>{{product.title}}</p>
+				<p>{{product.description}}</p>
+				<p>{{product.price}}</p>
+			</div>
+		</a>
+		{%endfor%}
+	</div>
+</div>
+{%endblock%}
