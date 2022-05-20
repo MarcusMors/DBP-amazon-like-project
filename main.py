@@ -131,11 +131,11 @@ def register_product():
     context = {"data": data}
     return render_template("register_product.html", **context)
 
-@app.route('/home', methods=['POST'])
+@app.route('/home', methods=['POST',"GET"])
 def upload_image():
     user_ip = request.remote_addr
-    if not is_logged(user_ip):
-        redirect("/login")
+    if not is_logged(user_ip): return redirect("/login")
+
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
@@ -161,7 +161,8 @@ def upload_image():
             flash('Allowed image types are -> png, jpg, jpeg, gif')
             return redirect(request.url)
     else:
-        return render_template('welcome.html', filename=filename)
+        # return render_template('welcome.html')
+        return redirect("/")
 
 
 
