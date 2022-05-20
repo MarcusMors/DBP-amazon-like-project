@@ -26,8 +26,8 @@ app = Flask(__name__, template_folder='./templates', static_folder='./static')
 #
 
 class Product:
-    def __init__(self,file_name,title,description,price) -> None:
-        self.file_name = file_name
+    def __init__(self,filename,title,description,price) -> None:
+        self.filename = filename
         self.title = title
         self.description = description
         self.price = price
@@ -151,10 +151,10 @@ def upload_image():
 
 
 
-# @app.route('/static/assets/<filename>')
-# def display_image(filename):
-#     #print('display_image filename: ' + filename)
-#     return redirect(url_for('static', filename='uploads/' + filename), code=301)
+@app.route('/images/<filename>')
+def display_image(filename):
+    #print('display_image filename: ' + filename)
+    return redirect(url_for('static', filename='assets/' + filename), code=301)
 
 if __name__ == '__main__':
     app.run(debug=True)
