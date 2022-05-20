@@ -26,7 +26,7 @@ body {
     margin: 0px auto;
 }
 
-input[type=text] { 
+input[type=text] {
     margin-left:10px;
     width: 75%;
     height: 32px;
@@ -55,7 +55,7 @@ button{
     overflow: auto;
     display: block;
     float: left;
-    
+
 }
 .sidebar ul li a{
     text-decoration:none ;
@@ -81,13 +81,20 @@ button{
     text-align: center;
 }
 .product-container{
-    width: 250px;
-    height: 250px;
-    padding: 20px;
-    background: white;
-    margin: 10px;
-    border-radius: 8px;
-
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  background: white;
+  margin: 10px;
+  border-radius: 8px;
+  /* overflow: hidden; */
+  /* display: -webkit-box; */
+  /* -webkit-line-clamp: 10;
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical; */
+    /* max-width: 150px; */
 }
 .product-container img  {
     height: 150px;
