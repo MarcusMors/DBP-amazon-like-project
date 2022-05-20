@@ -96,3 +96,21 @@ button{
 .product-container:hover{
     border: 1px solid #e19946 ;
 }
+
+.info {
+   margin: 0 auto;
+   border-collapse: collapse;
+   width: 50%;
+}
+
+.info td, .info th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.info th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ffa43f;
+}
