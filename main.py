@@ -1,4 +1,4 @@
-from crypt import methods
+#from crypt import methods
 from xml.etree.ElementTree import tostring
 from flask import Flask, request, make_response, redirect, render_template
 
@@ -47,7 +47,7 @@ def register():
 
 @app.route("/profile", methods=["POST"])
 def profile():
-    if not ("POST" in methods):
+    if request.method != 'POST':
         user_ip = request.remote_addr
         if(users.get(user_ip, False) == True):  # is logged
             # response = make_response(redirect("/profile"), data)
