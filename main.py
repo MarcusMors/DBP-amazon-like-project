@@ -25,7 +25,7 @@ app = Flask(__name__, template_folder='./templates', static_folder='./static')
 
 #
 
-
+'''
 class Product:
   file_name
   def __init__(self,file_name,title,description,price) -> None:
@@ -39,7 +39,7 @@ product = {
 }
 
 products = []
-
+'''
 data = {
     "username": "",
     "email": "",
