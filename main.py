@@ -50,8 +50,6 @@ def login():
             data[key] = request.form.get(key)
         context = {"data": data}
         return render_template("login.html")
-    user_ip = request.remote_addr
-
     return render_template("login.html")
 
 
@@ -65,7 +63,6 @@ def register():
 @app.route("/profile", methods=["POST","GET"])
 def profile():
     user_ip = request.remote_addr
-    if not is_logged(user_ip):  return redirect("/")
 
     if request.method == 'POST':
         email =request.form.get("email")
@@ -80,6 +77,10 @@ def profile():
         else:
             flash("User not found")
             return redirect(url_for("login"))
+    if not is_logged(user_ip):  return redirect("/")
+    context = {"data": data}
+    if is_logged(user_ip):  return render_template("profile.html", **context)
+
 
 
 @app.route('/register_product')
