@@ -156,5 +156,13 @@ def display_image(filename):
     #print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='assets/' + filename), code=301)
 
+@app.route('/carrito', methods=['POST','GET'])
+def carrito():
+    user_ip = request.remote_addr
+    if not is_logged(user_ip):
+        redirect("/login")
+    context = {"data": data, "products":products}
+    if is_logged(user_ip):  return render_template("carrito.html", **context)
+
 if __name__ == '__main__':
     app.run(debug=True)
