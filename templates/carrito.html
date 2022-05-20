@@ -8,7 +8,7 @@
 {%endblock%}{%block header%}
 <header class="header">
 	<div class="logo">
-		<a href="{{url_for('home')}}"
+		<a href="home"
 			><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo uwuzon"
 		/></a>
 	</div>
@@ -36,9 +36,10 @@
                     <td>Eliminar</td>
                     <td>Imagen</td>
                     <td>Producto</td>
+					<td>Descripción</td>
                     <td>Precio</td>
                     <td>Cantidad</td>
-                    <td>Total</td>
+                    
                 </tr>
             </thead>
             <tbody> <!--contenido de la tabla-->
@@ -50,18 +51,18 @@
 						<h5>{{product.title}}</h5>
 					</td>
 					<td>
-						<h5></h5>
-					</td>
-					<td>
-						<input class="w-25 pl-1" value="1" type="Número">
+						<h5>{{product.description}}</h5>
 					</td>
 					<td>
 						<h5>{{product.price}}</h5>
+					</td>
+					<td>
+						<input class="w-25 pl-1" value="1" type="Número">
 					</td>
 				</tr>
 				{%endfor%}
             </tbody>
         </table>
-		<button class="ml-auto">PROCEDER A PAGAR</button>
+		
     </div>
 {%endblock%}
