@@ -101,3 +101,18 @@
 	display: flex;
 	justify-self: flex-end;
 }
+table {
+	border: none;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td { 
+	padding: 5px 10px;
+	text-align: center;
+	border: 1px solid #999;
+}
+
+tr:nth-child(1) {
+	background: #dedede;
+}

@@ -47,31 +47,22 @@
 	</ul>
 </div>
 {%endblock%} {%block content%}
-<div class="contents">
-	<div class="products">
-		{% for key, value in data.items()%}
-		<div>
-			<h3>{{key}} : {{value}}</h3>
-		</div>
-		{%endfor%}
-	</div>
-</div>
 <div class="pfinfo">
 	<table class="info">
 		<tr>
 			<th><b>Información de usuario</b></th>
 		</tr>
 		<tr>
-			<td><b>Nombre:</b> </th>
+			<td><b>Nombre: {{data['username']}}</b> </td>
 		</tr>
 		<tr>
-			<td><b>Email:</b> </td>
+			<td><b>Email: {{data['email']}}</b> </td>
 		</tr>
 		<tr>
-			<td><b>Contraseña:</b> </td>
+			<td><b>Contraseña:{{data['password']}}</b> </td>
 		</tr>
 		<tr>
-			<td><b>Fecha de nacimiento:</b> </td>
+			<td><b>Fecha de nacimiento:{{data['birthday']}}</b> </td>
 		</tr>
 	</table>
 </div>
