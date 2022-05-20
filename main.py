@@ -43,33 +43,31 @@ def index():
 
 @app.route('/login', methods=["POST","GET"])
 def login():
+    user_ip = request.remote_addr
+    if is_logged(user_ip): return redirect(url_for("profile"))
     if request.method == 'POST':
-        user_ip = request.remote_addr
         for key, value in data.items():
             data[key] = request.form.get(key)
         context = {"data": data}
         return render_template("login.html")
     user_ip = request.remote_addr
-    if is_logged(user_ip):  # is logged
-        # response = make_response(redirect("/profile"), data)
-        return redirect(url_for("profile"))
+
     return render_template("login.html")
 
 
 @app.route('/register')
 def register():
     user_ip = request.remote_addr
-    if is_logged(user_ip):  # is logged
-        # response = make_response(redirect("/profile"), data)
-        response = make_response(redirect("/profile"))
-        return response
+    if is_logged(user_ip):  return redirect("/home")
     return render_template("register.html")
 
 
 @app.route("/profile", methods=["POST","GET"])
 def profile():
+    user_ip = request.remote_addr
+    if not is_logged(user_ip):  return redirect("/")
+
     if request.method == 'POST':
-        user_ip = request.remote_addr
         email =request.form.get("email")
         if email and data["email"] == email:
             if data["password"] == request.form.get("password"):
@@ -82,11 +80,6 @@ def profile():
         else:
             flash("User not found")
             return redirect(url_for("login"))
-    user_ip = request.remote_addr
-    if is_logged(user_ip):  # is logged
-        # response = make_response(redirect("/profile"), data)
-        context = {"data": data}
-        return render_template("profile.html", **context)
 
 
 @app.route('/register_product')
@@ -100,7 +93,8 @@ def register_product():
 @app.route('/home', methods=['POST'])
 def upload_image():
     user_ip = request.remote_addr
-    if not is_logged(user_ip): redirect("/")
+    if not is_logged(user_ip):
+        redirect("/")
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
@@ -118,6 +112,10 @@ def upload_image():
         else:
             flash('Allowed image types are -> png, jpg, jpeg, gif')
             return redirect(request.url)
+    else:
+          return render_template('home.html', filename=filename)
+
+
 
 # @app.route('/static/assets/<filename>')
 # def display_image(filename):
