@@ -67,13 +67,26 @@ def allowed_file(filename):
 def is_logged(user_ip):
     return users.get(user_ip, False) == True
 
-@app.route('/')
+@app.route('/',methods=["POST","GET"])
 def index():
     user_ip = request.remote_addr
+    if request.method == 'POST':
+        email =request.form.get("email")
+        if email and data["email"] == email:
+            if data["password"] == request.form.get("password"):
+                users[user_ip] = True
+                context = {"data": data, "products":products}
+                return render_template("welcome.html", **context,user=data["username"], log=True) 
+            else:
+                flash("Incorrect password")
+                return redirect(url_for("login"))
+        else:
+            flash("User not found")
+            return redirect(url_for("login"))
     if is_logged(user_ip):  # is logged
         context = {"data": data, "products":products}
         return render_template("welcome.html", **context, user=data["username"], log=True)
-    return render_template("login.html")
+    return redirect(url_for("login"))
 
 
 @app.route('/login', methods=["POST","GET"])
@@ -98,19 +111,6 @@ def register():
 @app.route("/profile", methods=["POST","GET"])
 def profile():
     user_ip = request.remote_addr
-    if request.method == 'POST':
-        email =request.form.get("email")
-        if email and data["email"] == email:
-            if data["password"] == request.form.get("password"):
-                users[user_ip] = True
-                context = {"data": data}
-                return render_template("profile.html", **context) 
-            else:
-                flash("Incorrect password")
-                return redirect(url_for("login"))
-        else:
-            flash("User not found")
-            return redirect(url_for("login"))
     if not is_logged(user_ip):  return redirect("/login")
     context = {"data": data}
     if is_logged(user_ip):  return render_template("profile.html", **context)
