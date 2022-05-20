@@ -52,7 +52,7 @@ products = [
     Product("imagen9.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
 
 ]
-
+car=[]
 data = {
     "username": "",
     "email": "",
@@ -174,8 +174,17 @@ def carrito():
     user_ip = request.remote_addr
     if not is_logged(user_ip):
         redirect("/login")
-    context = {"data": data, "products":products}
+    context = {"data": data, "products":car}
     if is_logged(user_ip):  return render_template("carrito.html", **context)
 
+@app.route('/carproducts/<filename>',methods=['POST','GET'])
+def carproduct(filename):
+    for key in products:
+        if key["filename"] == filename: 
+            print("producto encontrado: ",filename)
+            car.append(key)
+            print(car)
+    return redirect(url_for("index"))
 if __name__ == '__main__':
     app.run(debug=True)
+
