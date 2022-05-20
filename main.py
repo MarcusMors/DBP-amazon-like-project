@@ -25,8 +25,14 @@ def index():
     return render_template("login.html")
 
 
-@app.route('/login')
+@app.route('/login', methods=["POST","GET"])
 def login():
+    if request.method == 'POST':
+        user_ip = request.remote_addr
+        for key, value in data.items():
+            data[key] = request.form.get(key)
+        context = {"data": data}
+        return render_template("login.html")
     user_ip = request.remote_addr
     if(users.get(user_ip, False) == True):  # is logged
         # response = make_response(redirect("/profile"), data)
@@ -48,11 +54,12 @@ def register():
 def profile():
     if request.method == 'POST':
         user_ip = request.remote_addr
-        users[user_ip] = True
-        for key, value in data.items():
-            data[key] = request.form.get(key)
-        context = {"data": data}
-        return render_template("profile.html", **context)
+        if data["email"] == request.form.get("email") and data["password"] == request.form.get("password"):
+            users[user_ip] = True
+            context = {"data": data}
+            return render_template("profile.html", **context)
+        else:
+            return redirect(url_for("login"))
     user_ip = request.remote_addr
     if(users.get(user_ip, False) == True):  # is logged
         # response = make_response(redirect("/profile"), data)

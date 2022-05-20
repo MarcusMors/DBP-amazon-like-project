@@ -20,21 +20,21 @@
 	<div class="form">
 		<img src="{{url_for('static', filename='assets/logo.svg')}}" />
 		<h1>Iniciar sesión</h1>
-		<div class="datos">
+		<form class="datos" action="{{url_for('profile')}}", method="post">
 			<div class="mail">
 				<i class="fas fa-user"></i>
-				<input type="email" placeholder="Usuario o email" />
+				<input type="email" name="email" placeholder="Usuario o email" />
 			</div>
 			<div class="mail">
 				<i class="fas fa-lock"></i>
-				<input type="password" placeholder="Contraseña" />
+				<input type="password" name="password" placeholder="Contraseña" />
 			</div>
-		</div>
-		<span id="forgot"><a href="">¿Olvidaste la contraseña?</a></span>
-		<div class="apart">
-			<button>Ingresar</button>
-			<span id="new">¿No tienes una cuenta? <a href="register">Crea una.</a></span>
-		</div>
+			<span id="forgot"><a href="">¿Olvidaste la contraseña?</a></span>
+			<div class="apart">
+				<button>Ingresar</button>
+				<span id="new">¿No tienes una cuenta? <a href="register">Crea una.</a></span>
+			</div>
+		</form>
 	</div>
 </div>
 {%endblock%}
