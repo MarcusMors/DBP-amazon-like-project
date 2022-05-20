@@ -16,7 +16,7 @@ body {
     background-color:#131921;
     height: 50px;
     display: grid;
-    grid-template-columns: 20% 70% 10%;
+    grid-template-columns: 15% 80% 5%;
     align-items: center;
 }
 .header img {
@@ -28,27 +28,28 @@ body {
 
 input[type=text] { 
     margin-left:10px;
-    width: 80%;
+    width: 75%;
     height: 32px;
     box-sizing: border-box;
     border-radius: 4px;
     border: none;
     outline: none;
-    padding-left: 10px;
+    padding-left: 15px;
 }
 .welcome{
     color:white;
     display: inline-block;
-    text-align: right;
 }
 button{
     background-color: transparent;
     border: none;
     outline:none;
     cursor: pointer;
+    display: inline-block;
+    padding-right: 15px;
 }
 .sidebar {
-    width: 18%;
+    width: 15%;
     height: 100%;
     background: white;
     overflow: auto;

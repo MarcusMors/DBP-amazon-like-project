@@ -72,7 +72,7 @@ def index():
     user_ip = request.remote_addr
     if is_logged(user_ip):  # is logged
         context = {"data": data, "products":products}
-        return render_template("welcome.html", **context)
+        return render_template("welcome.html", **context, user=data["username"], log=True)
     return render_template("login.html")
 
 
@@ -104,7 +104,7 @@ def profile():
             if data["password"] == request.form.get("password"):
                 users[user_ip] = True
                 context = {"data": data}
-                return render_template("profile.html", **context, user=data["username"], log=True) 
+                return render_template("profile.html", **context) 
             else:
                 flash("Incorrect password")
                 return redirect(url_for("login"))
