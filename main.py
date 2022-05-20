@@ -1,8 +1,15 @@
 #from crypt import methods
+import os
+import urllib.request
 from xml.etree.ElementTree import tostring
-from flask import Flask, request, make_response, redirect, url_for, render_template
+# from flask import Flask, request, make_response, redirect, render_template, url_for
+from flask import Flask, request, make_response,redirect, render_template, url_for,flash
+from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg',"svg"])
+
+app = Flask(__name__, template_folder='./templates', static_folder='./static')
+# app = Flask(__name__)
 
 data = {
     "username": "",
@@ -11,15 +18,24 @@ data = {
     "birthday": "",
 }
 
+UPLOAD_FOLDER = 'static/assets'
+app.secret_key = "secret key"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 users = {
 }
 
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def is_logged(user_ip):
+    return users.get(user_ip, False) == True
 
 @app.route('/')
 def index():
     user_ip = request.remote_addr
-    if(users.get(user_ip, False) == True):  # is logged
+    if is_logged(user_ip):  # is logged
         context = {"data": data}
         return render_template("welcome.html", **context)
     return render_template("login.html")
@@ -34,7 +50,7 @@ def login():
         context = {"data": data}
         return render_template("login.html")
     user_ip = request.remote_addr
-    if(users.get(user_ip, False) == True):  # is logged
+    if is_logged(user_ip):  # is logged
         # response = make_response(redirect("/profile"), data)
         return redirect(url_for("profile"))
     return render_template("login.html")
@@ -43,7 +59,7 @@ def login():
 @app.route('/register')
 def register():
     user_ip = request.remote_addr
-    if(users.get(user_ip, False) == True):  # is logged
+    if is_logged(user_ip):  # is logged
         # response = make_response(redirect("/profile"), data)
         response = make_response(redirect("/profile"))
         return response
@@ -61,12 +77,45 @@ def profile():
         else:
             return redirect(url_for("login"))
     user_ip = request.remote_addr
-    if(users.get(user_ip, False) == True):  # is logged
+    if is_logged(user_ip):  # is logged
         # response = make_response(redirect("/profile"), data)
         context = {"data": data}
         return render_template("profile.html", **context)
 
+@app.route('/register_product')
+def register_product():
+    user_ip = request.remote_addr
+    if not is_logged(user_ip): redirect("/")
 
+    context = {"data": data}
+    return render_template("register_product.html", **context)
+
+@app.route('/home', methods=['POST'])
+def upload_image():
+    user_ip = request.remote_addr
+    if not is_logged(user_ip): redirect("/")
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No image selected for uploading')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #print('upload_image filename: ' + filename)
+            flash('Image successfully uploaded and displayed below')
+            return render_template('home.html', filename=filename)
+        else:
+            flash('Allowed image types are -> png, jpg, jpeg, gif')
+            return redirect(request.url)
+
+# @app.route('/static/assets/<filename>')
+# def display_image(filename):
+#     #print('display_image filename: ' + filename)
+#     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 if __name__ == '__main__':
     app.run(debug=True)

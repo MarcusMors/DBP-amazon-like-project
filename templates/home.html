@@ -10,12 +10,11 @@
 
 <link rel="icon" href="../assets/icon.png" />
 <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}" />
-<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
 
 <link href="https://fonts.googleapis.com/css2" />
 <script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
-
-{%block header%}
+{%endblock%} {%block header%}
 <header class="header">
 	<div class="logo">
 		<a href="home"
@@ -46,20 +45,5 @@
 		<li><a href="">Arte y Artesanías</a></li>
 		<li><a href="">Insumos para mascotas</a></li>
 	</ul>
-</div>
-{%endblock%} {%block content%}
-<div class="contents">
-	<div class="products">
-		{%for item in range(1,10)%}
-		<a href="">
-			<div class="product-container">
-				<i class="fa-regular fa-cart-shopping"></i>
-				<img src="{{url_for('static', filename='assets/imagen{{item}}.jpg)}}" alt="" />
-				<h3>---$</h3>
-				<p>--------------------------------------------</p>
-			</div>
-		</a>
-		{%endfor%}
-	</div>
 </div>
 {%endblock%}
