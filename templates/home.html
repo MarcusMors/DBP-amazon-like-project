@@ -25,4 +25,9 @@
 		</div>
 	</div>
 </header>
-{%endblock%}{%block contents%} {%endblock%}
+{%endblock%}{%block content%} {%for product in products%}
+<p>{{product.filename}}</p>
+<p>{{product.title}}</p>
+<p>{{product.description}}</p>
+<p>{{product.price}}</p>
+{%endfor%} {%endblock%}

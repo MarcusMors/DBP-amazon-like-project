@@ -25,21 +25,27 @@ app = Flask(__name__, template_folder='./templates', static_folder='./static')
 
 #
 
-'''
 class Product:
-  file_name
-  def __init__(self,file_name,title,description,price) -> None:
-      pass
+    def __init__(self,file_name,title,description,price) -> None:
+        self.file_name = file_name
+        self.title = title
+        self.description = description
+        self.price = price
+        pass
 
-product = {
-  "file_name" : "",
-  "title" : "generic tittle",
-  "description" : "generic description",
-  "price" : "5",
-}
+products = [
+    Product("imagen1.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen2.jpg", "laptop acer nitro gamer", "disfruta de la experiencia acer gamer con la tecnología nitro de ultra gama ultima generación, 4 motores, guardaperrras impermeable, 5 velocidades", "15.000 uwu"),
+    Product("imagen3.jpg", "cama de perro marca SO", "engríe a tu mascota con esta cama para perro de 85cm x 135 cm", "325 uwu"),
+    Product("imagen4.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen5.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen6.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen7.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen8.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen9.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
 
-products = []
-'''
+]
+
 data = {
     "username": "",
     "email": "",
@@ -65,7 +71,7 @@ def is_logged(user_ip):
 def index():
     user_ip = request.remote_addr
     if is_logged(user_ip):  # is logged
-        context = {"data": data}
+        context = {"data": data, "products":products}
         return render_template("welcome.html", **context)
     return render_template("login.html")
 
