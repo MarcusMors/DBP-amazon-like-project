@@ -4,4 +4,25 @@
 <!--  -->
 {%block css%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
-{%endblock%} {%block contents%} {%endblock%}
+{%endblock%} {%block header%}
+<header class="header">
+	<div class="logo">
+		<a href="home"
+			><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo"
+		/></a>
+	</div>
+	<div class="search-box">
+		<input name="name" type="text" placeholder="Search" />
+		<button type="submit" class="search-btn">
+			<i class="fas fa-search" style="color: white"></i>
+		</button>
+	</div>
+	<div class="cart">
+		<div class="cart">
+			<a href="carrito"
+				><img src="{{url_for('static', filename='assets/cart.png')}}" alt="cart"
+			/></a>
+		</div>
+	</div>
+</header>
+{%endblock%}{%block contents%} {%endblock%}
