@@ -25,13 +25,20 @@ app = Flask(__name__, template_folder='./templates', static_folder='./static')
 
 #
 
-class Product:
-    def __init__(self,filename,title,description,price) -> None:
-        self.filename = filename
-        self.title = title
-        self.description = description
-        self.price = price
-        pass
+# class Product:
+#     def __init__(self,filename,title,description,price) -> None:
+#         self.filename = filename
+#         self.title = title
+#         self.description = description
+#         self.price = price
+#         pass
+
+def Product(filename,title,description,price):
+        product={"filename" : filename,
+        "title" : title,
+        "description" : description,
+        "price" : price,}
+        return product
 
 products = [
     Product("imagen1.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
@@ -76,7 +83,7 @@ def index():
             if data["password"] == request.form.get("password"):
                 users[user_ip] = True
                 context = {"data": data, "products":products}
-                return render_template("welcome.html", **context,user=data["username"], log=True) 
+                return render_template("welcome.html", **context,user=data["username"], log=True)
             else:
                 flash("Incorrect password")
                 return redirect(url_for("login"))
@@ -133,6 +140,7 @@ def upload_image():
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
+
         file = request.files['file']
         if file.filename == '':
             flash('No image selected for uploading')
@@ -140,20 +148,25 @@ def upload_image():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            #print('upload_image filename: ' + filename)
-            flash('Image successfully uploaded and displayed below')
-            return render_template('home.html', filename=filename)
+            new_product = Product(filename,"","","")
+            for key, value in new_product.items():
+                if key == "filename": continue
+                new_product[key] = request.form.get(key)
+            # print(new_product)
+            products.append(new_product)
+            # print(products)
+            return redirect('/')
+            # return render_template('welcome.html', **context)
         else:
             flash('Allowed image types are -> png, jpg, jpeg, gif')
             return redirect(request.url)
     else:
-          return render_template('home.html', filename=filename)
+        return render_template('welcome.html', filename=filename)
 
 
 
 @app.route('/images/<filename>')
 def display_image(filename):
-    #print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='assets/' + filename), code=301)
 
 @app.route('/carrito', methods=['POST','GET'])
