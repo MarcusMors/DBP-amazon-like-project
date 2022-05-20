@@ -41,15 +41,15 @@ def Product(filename,title,description,price):
         return product
 
 products = [
-    Product("imagen1.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
-    Product("imagen2.jpg", "laptop acer nitro gamer", "disfruta de la experiencia acer gamer con la tecnología nitro de ultra gama ultima generación, 4 motores, guardaperrras impermeable, 5 velocidades", "15.000 uwu"),
-    Product("imagen3.jpg", "cama de perro marca SO", "engríe a tu mascota con esta cama para perro de 85cm x 135 cm", "325 uwu"),
-    Product("imagen4.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
-    Product("imagen5.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
-    Product("imagen6.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
-    Product("imagen7.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
-    Product("imagen8.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
-    Product("imagen9.jpg", "cargador celular laptop", "conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen1.jpg", "Cargador celular laptop", "Conecta tu celular a tu laptop para cargarla", "15 uwu"),
+    Product("imagen2.jpg", "Laptop acer nitro gamer", "Disfruta la experiencia acer gamer con tecnología de ultra gama, impermeable", "15.000 uwu"),
+    Product("imagen3.jpg", "Cama de perro marca SO", "Engríe a tu mascota con esta cama para perro de 85cm x 135 cm", "325 uwu"),
+    Product("imagen4.jpg", "Audifonos inalambricos", "Escucha música sin alambres, sin preocupaciones, escuchalo con Micronics", "95 uwu"),
+    Product("imagen5.jpg", "Cámara Lumix", "Captura los mejores momentos de tu vida en alta definición", "4.500 uwu"),
+    Product("imagen6.jpg", "Lentes Anyluv olor a menta", "Domina la jerarquía del inconsciente y dá una imagen de intelectual con lentes Anyluv", "99 uwu"),
+    Product("imagen7.jpg", "Juego animal crossing", "Relajate en este mundo de fantasía y danos tu dinero mientras pierdes tu vida", "175 uwu"),
+    Product("imagen8.jpg", "Smart echo dot speaker/microphone", "Interactúa con el mundo desde la comodidad de tu casa", "875 uwu"),
+    Product("imagen9.jpg", "Zapatillas T blancas", "Corre como flash, corre como the big T man", "15 uwu"),
 
 ]
 car=[]
@@ -181,7 +181,7 @@ def carrito():
 @app.route('/carproducts/<filename>',methods=['POST','GET'])
 def carproduct(filename):
     for key in products:
-        if key["filename"] == filename: 
+        if key["filename"] == filename:
             print("producto encontrado: ",filename)
             car.append(key)
             print(car)
