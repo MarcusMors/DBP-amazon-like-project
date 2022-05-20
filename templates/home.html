@@ -2,48 +2,6 @@
 <!--  -->
 {%block title%}Home{%endblock%}
 <!--  -->
-{%block head%}
-<meta charset="UTF-8" />
-<meta name="description" content="" />
-<meta name="robots" content="index,follow" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<link rel="icon" href="../assets/icon.png" />
-<link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}" />
+{%block css%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
-
-<link href="https://fonts.googleapis.com/css2" />
-<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
-{%endblock%} {%block header%}
-<header class="header">
-	<div class="logo">
-		<a href="home"
-			><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo"
-		/></a>
-	</div>
-	<div class="search-box">
-		<input name="name" type="text" placeholder="Search" />
-		<button type="submit" class="search-btn">
-			<i class="fas fa-search" style="color: white"></i>
-		</button>
-	</div>
-	<div class="cart">
-		<div class="cart">
-			<a href="carrito"
-				><img src="{{url_for('static', filename='assets/cart.png')}}" alt="cart"
-			/></a>
-		</div>
-	</div>
-</header>
-{%endblock%} {%block sidebar%}
-<div class="sidebar">
-	<h2>Categorias</h2>
-	<ul>
-		<li><a href="">Electrónicos</a></li>
-		<li><a href="">Computadoras</a></li>
-		<li><a href="">Smart Home</a></li>
-		<li><a href="">Arte y Artesanías</a></li>
-		<li><a href="">Insumos para mascotas</a></li>
-	</ul>
-</div>
-{%endblock%}
+{%endblock%} {%block contents%} {%endblock%}

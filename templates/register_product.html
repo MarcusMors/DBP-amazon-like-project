@@ -30,33 +30,42 @@
  You should have received a copy of the GNU Affero General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
-<!doctype html>
-<title>Python Flask File Upload Example</title>
-<h2>Select a file to upload</h2>
-<p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
-</p>
-{% if filename %}
-	<div>
-		<img src="{{ url_for('display_image', filename=filename) }}">
+{%extends "home_page_layout.html"%}
+<!--  -->
+{%block title%}Home{%endblock%}
+<!--  -->
+{%block css%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
+{%endblock%} {%block header%}
+<header class="header">
+	<div class="logo">
+		<a href="home"
+			><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo"
+		/></a>
 	</div>
-{% endif %}
+	<div class="search-box">
+		<input name="name" type="text" placeholder="Search" />
+		<button type="submit" class="search-btn">
+			<i class="fas fa-search" style="color: white"></i>
+		</button>
+	</div>
+	<div class="cart">
+		<div class="cart">
+			<a href="carrito"
+				><img src="{{url_for('static', filename='assets/cart.png')}}" alt="cart"
+			/></a>
+		</div>
+	</div>
+</header>
+{%endblock%} {%block content%}
+<h2>Select a file to upload</h2>
 <form method="post" action="/home" enctype="multipart/form-data">
-    <dl>
-		<p>
-			<input type="file" name="file" autocomplete="off" required>
-		</p>
-    </dl>
-    <p>
-		<input type="submit" value="Submit">
-	</p>
+	<div>
+		<input type="file" name="file" autocomplete="off" required />
+	</div>
+	<div>
+		<input type="submit" value="Submit" />
+	</div>
 </form>
+
+{%endblock%}

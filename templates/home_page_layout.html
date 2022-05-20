@@ -2,14 +2,36 @@
 <html>
 	<head>
 		<title>{%block title%}{%endblock%}</title>
-		{%block head%}{%endblock%}
+		{%block head%}
+		<meta charset="UTF-8" />
+		<meta name="description" content="" />
+		<meta name="robots" content="index,follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" href="../assets/icon.png" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}" />
+
+		<link href="https://fonts.googleapis.com/css2" />
+		<script src="https://kit.fontawesome.com/1b04830cf2.js" crossorigin="anonymous"></script>
+		{%endblock%} {%block css%}{%endblock%}
 	</head>
 
 	<body>
 		<!-- HEADER -->
 		{%block header%} {%endblock%}
 		<!-- SIDEBAR -->
-		{%block sidebar%} {%endblock%}
+		{%block sidebar%}
+		<div class="sidebar">
+			<h2>Categorias</h2>
+			<ul>
+				<li><a href="">Electrónicos</a></li>
+				<li><a href="">Computadoras</a></li>
+				<li><a href="">Smart Home</a></li>
+				<li><a href="">Arte y Artesanías</a></li>
+				<li><a href="">Insumos para mascotas</a></li>
+			</ul>
+		</div>
+		{%endblock%}
 		<!-- CONTENIDO -->
 		{%block content%} {%endblock%}
 	</body>
