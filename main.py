@@ -77,7 +77,7 @@ def profile():
         else:
             flash("User not found")
             return redirect(url_for("login"))
-    if not is_logged(user_ip):  return redirect("/")
+    if not is_logged(user_ip):  return redirect("/login")
     context = {"data": data}
     if is_logged(user_ip):  return render_template("profile.html", **context)
 
@@ -86,8 +86,7 @@ def profile():
 @app.route('/register_product')
 def register_product():
     user_ip = request.remote_addr
-    if not is_logged(user_ip): redirect("/")
-
+    if not is_logged(user_ip): return redirect("/login")
     context = {"data": data}
     return render_template("register_product.html", **context)
 
@@ -95,7 +94,7 @@ def register_product():
 def upload_image():
     user_ip = request.remote_addr
     if not is_logged(user_ip):
-        redirect("/")
+        redirect("/login")
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
