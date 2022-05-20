@@ -8,8 +8,8 @@
 {%endblock%}{%block header%}
 <header class="header">
 	<div class="logo">
-		<a href="home"
-			><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo"
+		<a href="{{url_for('home')}}"
+			><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo uwuzon"
 		/></a>
 	</div>
 	<div class="search-box">
@@ -26,8 +26,10 @@
 		</div>
 	</div>
 </header>
-{%endblock%}{%block sidebar%}{%endblock%}{%block content%}
-	<div id="cart-container" classs="container my-5"><!-- comenzando código de carrito de compras-->
+{%endblock%}
+{%block sidebar%}{%endblock%}
+{%block content%}
+	<div id="cart-container" class="container my-5"><!-- comenzando código de carrito de compras-->
         <table width="100%">
             <thead>
                 <tr> <!--encabezado de tablita-->
@@ -39,7 +41,7 @@
                     <td>Total</td>
                 </tr>
             </thead>
-            <tbody> <!--contenido de la tabla--> 	
+            <tbody> <!--contenido de la tabla-->
 				{%for product in products%}
 				<tr></tr>
 					<td><a href="#"><i class="fas fa-trash-alt"></i></a> </td>  <!--basurero-->
@@ -62,5 +64,4 @@
         </table>
 		<button class="ml-auto">PROCEDER A PAGAR</button>
     </div>
-
 {%endblock%}
