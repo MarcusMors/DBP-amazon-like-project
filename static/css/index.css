@@ -67,7 +67,7 @@ img
   display: flex;
   width: 50%;
   margin: 0px auto;
-  
+
 
 }
 .datos
@@ -155,7 +155,7 @@ a
   text-align: right;
 }
 
-button
+input[type="submit"], button
 {
   min-width: 250px;
   cursor: pointer;
@@ -171,7 +171,7 @@ button
   color: #fff;
 }
 
-button:hover{
+input[type="submit"]:hover, button:hover{
   background-color: #de7a09;
 }
 
