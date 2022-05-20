@@ -11,6 +11,35 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg',"svg"])
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
 # app = Flask(__name__)
 
+# 0. terminar la clase producto
+# 1. llenar los productos default de uwuzon (imagen1 a imagen9)
+#    el array de productos, debe tener 9 instancias u objetos
+# 2. hacer que el form de upload haga append al array productos
+# 3. home itera el array de productos
+# 4. descansar
+
+# peor de los casos, imagen por typos
+# 1. cambiar el upload por un input select
+# 2. poner las imagenes de los tipos
+# 3. 4 ifs en el home, e iterar los productos
+
+#
+
+
+class Product:
+  file_name
+  def __init__(self,file_name,title,description,price) -> None:
+      pass
+
+product = {
+  "file_name" : "",
+  "title" : "generic tittle",
+  "description" : "generic description",
+  "price" : "5",
+}
+
+products = []
+
 data = {
     "username": "",
     "email": "",
