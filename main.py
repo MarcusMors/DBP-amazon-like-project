@@ -92,14 +92,13 @@ def register():
 @app.route("/profile", methods=["POST","GET"])
 def profile():
     user_ip = request.remote_addr
-
     if request.method == 'POST':
         email =request.form.get("email")
         if email and data["email"] == email:
             if data["password"] == request.form.get("password"):
                 users[user_ip] = True
                 context = {"data": data}
-                return render_template("profile.html", **context)
+                return render_template("profile.html", **context, user=data["username"], log=True) 
             else:
                 flash("Incorrect password")
                 return redirect(url_for("login"))

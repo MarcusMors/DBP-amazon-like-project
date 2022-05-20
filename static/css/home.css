@@ -36,6 +36,11 @@ input[type=text] {
     outline: none;
     padding-left: 10px;
 }
+.welcome{
+    color:white;
+    display: inline-block;
+    text-align: right;
+}
 button{
     background-color: transparent;
     border: none;
