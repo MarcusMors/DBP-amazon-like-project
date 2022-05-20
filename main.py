@@ -134,7 +134,6 @@ def register_product():
 @app.route('/home', methods=['POST'])
 def upload_image():
     user_ip = request.remote_addr
-    context = {"data": data, "contents":products}
     if not is_logged(user_ip):
         redirect("/login")
     if request.method == 'POST':
@@ -150,11 +149,12 @@ def upload_image():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             new_product = Product(filename,"","","")
-            for key, value in data.items():
+            for key, value in new_product.items():
                 if key == "filename": continue
                 new_product[key] = request.form.get(key)
+            # print(new_product)
             products.append(new_product)
-            print(products)
+            # print(products)
             return redirect('/')
             # return render_template('welcome.html', **context)
         else:
