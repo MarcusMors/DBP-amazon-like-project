@@ -70,17 +70,24 @@ def register():
 def profile():
     if request.method == 'POST':
         user_ip = request.remote_addr
-        if data["email"] == request.form.get("email") and data["password"] == request.form.get("password"):
-            users[user_ip] = True
-            context = {"data": data}
-            return render_template("profile.html", **context)
+        email =request.form.get("email")
+        if email and data["email"] == email:
+            if data["password"] == request.form.get("password"):
+                users[user_ip] = True
+                context = {"data": data}
+                return render_template("profile.html", **context)
+            else:
+                flash("Incorrect password")
+                return redirect(url_for("login"))
         else:
+            flash("User not found")
             return redirect(url_for("login"))
     user_ip = request.remote_addr
     if is_logged(user_ip):  # is logged
         # response = make_response(redirect("/profile"), data)
         context = {"data": data}
         return render_template("profile.html", **context)
+
 
 @app.route('/register_product')
 def register_product():

@@ -21,6 +21,13 @@
 		<img src="{{url_for('static', filename='assets/logo.svg')}}" />
 		<h1>Iniciar sesión</h1>
 		<form class="datos" action="{{url_for('profile')}}", method="post">
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<span style="padding-bottom: 10px; color: #ff9a00;">{{message}}</span>
+				{% endfor %}
+			{% endif %}
+			{% endwith %}
 			<div class="mail">
 				<i class="fas fa-user"></i>
 				<input type="email" name="email" placeholder="Usuario o email" />
