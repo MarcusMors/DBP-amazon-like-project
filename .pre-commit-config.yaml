@@ -23,3 +23,19 @@ repos:
             # pre-commit's default_language_version, see
             # https://pre-commit.com/#top_level-default_language_version
             language_version: python3.9
+            stages: [commit]
+    - repo: https://github.com/pycqa/flake8
+      rev: "" # pick a git hash / tag to point to
+      hooks:
+          - id: flake8
+            stages: [commit]
+
+    # - repo: local
+    #   hooks:
+    #       - id: pytest
+    #         name: pytest
+    #         language: system
+    #         entry: pytest
+    #         pass_filenames: false
+    #         always_run: true
+    #         stages: [commit]
