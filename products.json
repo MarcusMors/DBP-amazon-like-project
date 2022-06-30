@@ -1,0 +1,56 @@
+[
+    {
+        "filename": "imagen1.jpg",
+        "title": "Cargador celular laptop",
+        "description": "Conecta tu celular a tu laptop para cargarla",
+        "price": "15 uwu"
+    },
+    {
+        "filename": "imagen2.jpg",
+        "title": "Laptop acer nitro gamer",
+        "description": "Disfruta la experiencia acer gamer con tecnolog\u00eda de ultra gama, impermeable",
+        "price": "15.000 uwu"
+    },
+    {
+        "filename": "imagen3.jpg",
+        "title": "Cama de perro marca SO",
+        "description": "Engr\u00ede a tu mascota con esta cama para perro de 85cm x 135 cm",
+        "price": "325 uwu"
+    },
+    {
+        "filename": "imagen4.jpg",
+        "title": "Audifonos inalambricos",
+        "description": "Escucha m\u00fasica sin alambres, sin preocupaciones, escuchalo con Micronics",
+        "price": "95 uwu"
+    },
+    {
+        "filename": "imagen5.jpg",
+        "title": "C\u00e1mara Lumix",
+        "description": "Captura los mejores momentos de tu vida en alta definici\u00f3n",
+        "price": "4.500 uwu"
+    },
+    {
+        "filename": "imagen6.jpg",
+        "title": "Lentes Anyluv olor a menta",
+        "description": "Domina la jerarqu\u00eda del inconsciente y d\u00e1 una imagen de intelectual con lentes Anyluv",
+        "price": "99 uwu"
+    },
+    {
+        "filename": "imagen7.jpg",
+        "title": "Juego animal crossing",
+        "description": "Relajate en este mundo de fantas\u00eda y danos tu dinero mientras pierdes tu vida",
+        "price": "175 uwu"
+    },
+    {
+        "filename": "imagen8.jpg",
+        "title": "Smart echo dot speaker/microphone",
+        "description": "Interact\u00faa con el mundo desde la comodidad de tu casa",
+        "price": "875 uwu"
+    },
+    {
+        "filename": "imagen9.jpg",
+        "title": "Zapatillas T blancas",
+        "description": "Corre como flash, corre como the big T man",
+        "price": "15 uwu"
+    }
+]
