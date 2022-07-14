@@ -20,28 +20,29 @@
 	<div class="form">
 		<img src="{{url_for('static', filename='assets/logo.svg')}}" />
 		<h1>Iniciar sesión</h1>
-		<form class="datos" action="{{url_for('index')}}", method="post">
-			{% with messages = get_flashed_messages() %}
-			{% if messages %}
-				{% for message in messages %}
-					<span style="padding-bottom: 10px; color: #ff9a00;">{{message}}</span>
-				{% endfor %}
-			{% endif %}
-			{% endwith %}
+		<form id="login_form" class="datos" action="{{url_for('index')}}" method="post">
+			<span id="login_form__email_message"></span>
 			<div class="mail">
 				<i class="fas fa-user"></i>
-				<input type="email" name="email" placeholder="Usuario o email" />
+				<input id="login_form__email" type="email" name="email" placeholder="Email" />
 			</div>
 			<div class="mail">
 				<i class="fas fa-lock"></i>
-				<input type="password" name="password" placeholder="Contraseña" />
+				<input
+					id="login_form__password"
+					type="password"
+					name="password"
+					placeholder="Contraseña"
+				/>
 			</div>
 			<span id="forgot"><a href="">¿Olvidaste la contraseña?</a></span>
 			<div class="apart">
-				<button>Ingresar</button>
+				<button id="submit">Ingresar</button>
 				<span id="new">¿No tienes una cuenta? <a href="register">Crea una.</a></span>
 			</div>
 		</form>
 	</div>
 </div>
+<script src="{{url_for('static', filename='js/login.js')}}"></script>
+
 {%endblock%}

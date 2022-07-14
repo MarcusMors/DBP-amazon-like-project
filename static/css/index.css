@@ -186,3 +186,11 @@ a:hover
   color: #de7a09;
   text-decoration: underline;
 }
+
+
+#login_form__email_message
+/* .login_form__email_message */
+{
+  padding-bottom: 10px;
+  color: #ff9a00;
+}

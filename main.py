@@ -2,23 +2,18 @@
 import json
 import os
 
+from flask import Flask, flash, redirect, render_template, request, url_for
+from werkzeug.utils import secure_filename
+
+# from typing import Generator
+
+
 # import atexit
 # import urllib.request
 # from xml.etree.ElementTree import tostring
 
 # from flask import Flask, request, make_response, redirect, render_template, url_for
 
-from flask import (
-    Flask,
-    request,
-    # make_response,
-    redirect,
-    render_template,
-    url_for,
-    flash,
-)
-
-from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpeg", "svg"])
 
@@ -60,24 +55,37 @@ def is_logged(user_ip):
     return users.get(user_ip, False) == True
 
 
-@app.route("/check_credentials", methods=["POST", "GET"])
+@app.route("/api/check_credentials", methods=["POST"])
 def check_credentials():
-    user_ip = request.remote_addr
-    answer = {
+    client_ip: str = request.remote_addr
+    answer = {  # credentials aren't OK!
         "correct_email": False,
         "correct_password": False,
+        "id": 400,
     }
 
-    if request.method == "POST":
-        email = request.form.get("email")
-        user_data = users_data[email]
-        if email and user_data["email"] == email:
-            answer["correct_email"] = True
-            if user_data["password"] == request.form.get("password"):
-                users[user_ip] = True
-
+    if request.method != "POST":
+        answer["id"] = 405  # Method Not Allowed
         return answer
-    return {"id": "your method wasn't post"}
+    # if not request.is_json():
+    #   pass  # what should we do if the request isn't in json
+
+    request_data = request.get_json()
+    client_email: str = request_data["email"]
+    if client_email not in users_data:
+        answer["id"] = 404  # user not found
+        return answer
+
+    user_data = users_data[client_email]
+    if user_data["email"] == client_email:
+        answer["correct_email"] = True
+        client_password: str = request_data["password"]
+        if user_data["password"] == client_password:
+            answer["correct_password"] = True
+            answer["id"] = 200  # credentials are OK!
+            users[client_ip] = True
+
+    return answer
 
 
 @app.route("/", methods=["POST", "GET"])
