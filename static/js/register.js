@@ -46,22 +46,22 @@ for (let i = 0; i < 5; i++) {
 }
 
 all_input_field["username"].addEventListener("input", function () {
-	const min_length = 5
+	const min_length = 4
 	let error_message = ""
 	if (this.value.length <= min_length) {
 		button.disabled = true
-		error_message = `your username must be at least ${min_length} characters long`
+		error_message = `your username must be at least ${min_length + 1} characters long`
 	} else {
 		button.disabled = false
 	}
 	set_error_message(error_message_element_username, error_message)
 })
 all_input_field["email"].addEventListener("input", function () {
-	const min_length = 5
+	const min_length = 4
 	let error_message = ""
 	if (this.value.length <= min_length) {
 		button.disabled = true
-		error_message = `your mail must be at least ${min_length} characters long`
+		error_message = `your mail must be at least ${min_length + 1} characters long`
 	} else {
 		button.disabled = false
 	}

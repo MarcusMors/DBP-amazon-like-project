@@ -20,10 +20,11 @@ async function get_data(t_begin, t_end) {
 	const response = await fetch(request)
 }
 
-const [begin, end] = [0, 15]
+const [begin, end] = [0, 9]
 get_data(begin, end)
 
-let watched_element = document.getElementById("login_form__email")
+let signal_element = document.getElementById("load_signal")
+// let load_button = document.getElementById("load")
 
 function set_error_message(t_error_message_element, t_error_message) {
 	t_error_message_element.textContent = ""

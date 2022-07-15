@@ -40,7 +40,7 @@ function set_flag_and_button_disabled(t_flag_1, t_flag_2) {
 }
 
 input_email.addEventListener("input", function () {
-	const min_length = 5
+	const min_length = 4
 	let error_message = ""
 	if (this.value == "") {
 		if (at_least_one_empty_field) {
@@ -52,7 +52,7 @@ input_email.addEventListener("input", function () {
 		set_flag_and_button_disabled(true, true)
 	} else if (this.value.length <= min_length) {
 		set_flag_and_button_disabled(false, true)
-		error_message = `your email must be at least ${min_length} characters long`
+		error_message = `your email must be at least ${min_length + 1} characters long`
 	} else {
 		set_flag_and_button_disabled(false, false)
 	}
