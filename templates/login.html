@@ -3,12 +3,7 @@
 {%block title%}Register{%endblock%}
 <!--  -->
 {%block head%}
-<meta charset="UTF-8" />
-<meta name="description" content="" />
-<meta name="robots" content="index,follow" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" href="../assets/icon.png" />
 <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}" />
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
 
@@ -21,7 +16,8 @@
 		<img src="{{url_for('static', filename='assets/logo.svg')}}" />
 		<h1>Iniciar sesión</h1>
 		<form id="login_form" class="datos" action="{{url_for('index')}}" method="post">
-			<span id="login_form__email_message"></span>
+			<span id="error_message_1" class="error_message"></span>
+			<span id="error_message_2" class="error_message"></span>
 			<div class="mail">
 				<i class="fas fa-user"></i>
 				<input id="login_form__email" type="email" name="email" placeholder="Email" />

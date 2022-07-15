@@ -3,12 +3,7 @@
 {%block title%}Register{%endblock%}
 <!--  -->
 {%block head%}
-<meta charset="UTF-8" />
-<meta name="description" content="" />
-<meta name="robots" content="index,follow" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" href="../assets/icon.png" />
 <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}" />
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
 
@@ -18,12 +13,17 @@
 {%endblock%} {%block body%}
 <div id="bg">
 	<div class="form">
-		<form action="{{url_for('login')}}" method="post">
-			<a href="home.html"
-				><img class="logo-log" src="{{url_for('static', filename='assets/logo.svg')}}"
-			/></a>
-			<h1>Registrarse</h1>
+		<img class="logo-log" src="{{url_for('static', filename='assets/logo.svg')}}" />
+		<!-- <img src="{{url_for('static', filename='assets/logo.svg')}}" /> -->
+
+		<h1>Registrarse</h1>
+		<form id="login_form" action="{{url_for('login')}}" method="post">
 			<div class="datos">
+				<span id="error_message_general" class="error_message"></span>
+				<span id="error_message_username" class="error_message"></span>
+				<span id="error_message_email" class="error_message"></span>
+				<span id="error_message_password_1" class="error_message"></span>
+				<span id="error_message_password_2" class="error_message"></span>
 				<div class="mail">
 					<i class="fas fa-user"></i>
 					<input class="log-inp" type="text" name="username" placeholder="Tu usuario" />
@@ -48,7 +48,12 @@
 				</div>
 				<div class="mail">
 					<i class="fas fa-lock"></i>
-					<input class="log-inp" type="password" placeholder="Repite tu contraseña" />
+					<input
+						class="log-inp"
+						type="password"
+						placeholder="Repite tu contraseña"
+						name="repeat_password"
+					/>
 				</div>
 				<div class="mail">
 					<i class="fas fa-lock"></i>
@@ -57,14 +62,14 @@
 			</div>
 
 			<div class="apart">
-				<input type="submit" value="Registrarse" class="btn-log" />
+				<button id="submit" class="btn-log">Registrarse</button>
 				<label
-					><input type="checkbox" /><span id="new">
+					><input type="checkbox" /><span class="new">
 						Acepto los <a class="log-btn" href="">Términos y Condiciones</a> y la
 						<a class="log-btn" href="">Política de Privacidad</a>.</span
 					></label
 				>
-				<span id="new"
+				<span class="new"
 					>¿Ya tienes una cuenta?
 					<a class="log-btn" href="login.html">Inicia sesión.</a></span
 				>
@@ -72,4 +77,6 @@
 		</form>
 	</div>
 </div>
+
+<script src="{{url_for('static', filename='js/register.js')}}"></script>
 {%endblock%}

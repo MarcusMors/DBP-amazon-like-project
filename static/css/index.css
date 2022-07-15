@@ -57,7 +57,7 @@ body
 
 h1
 {
-  margin: 15px;
+  margin: 5px 15px;
   text-align: center;
   color: #f0f0f0;
 }
@@ -175,7 +175,7 @@ input[type="submit"]:hover, button:hover{
   background-color: #de7a09;
 }
 
-#new
+.new
 {
   font-size: 0.8em;
   color: #f0f0f0;
@@ -188,8 +188,7 @@ a:hover
 }
 
 
-#login_form__email_message
-/* .login_form__email_message */
+.error_message
 {
   padding-bottom: 10px;
   color: #ff9a00;

@@ -31,17 +31,24 @@
 {%endblock%}{%block content%}
 <div class="contents">
 	<div class="products">
+		<!--  -->
 		{%for product in products%}
 		<a class="product-ref" href="{{url_for('carproduct',filename = product.filename)}}">
 			<div class="product-container">
 				<i class="fa-regular fa-cart-shopping"></i>
-				<img src="images/{{product.filename}}"></img>
+				<img src="images/{{product.filename}}" />
 				<p>{{product.title}}</p>
 				<p>{{product.description}}</p>
 				<p>{{product.price}}</p>
 			</div>
 		</a>
 		{%endfor%}
+		<!--  -->
 	</div>
 </div>
+<footer>
+	<div>YOU ARE WATCHING, THIS, YOU GONNA GET MORE CONTENT</div>
+</footer>
+<script src="{{url_for('static', filename='js/welcome.js')}}"></script>
+
 {%endblock%}

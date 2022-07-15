@@ -44,7 +44,7 @@ app.secret_key = "secret key"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 
-users = {}
+logged_users = {}  # ip : email
 
 
 def allowed_file(filename):
@@ -52,15 +52,54 @@ def allowed_file(filename):
 
 
 def is_logged(user_ip):
-    return users.get(user_ip, False) == True
+    return user_ip in logged_users
+
+
+@app.route("/api/products", methods=["POST"])
+def get_products():
+    answer = {"products": "", "id": 200}  # Everything OK!
+
+    if request.method != "POST":
+        answer["id"] = 405  # Method Not Allowed
+        return answer
+
+    request_data = request.get_json()
+    begin, end = request_data["begin"], request_data["end"] + 1
+    if begin < 0 or end <= begin:
+        answer["id"] = 400  # Bad request
+        return answer
+
+    answer[products] = products[begin : end - 1]  # [begin:end)
+    return answer
+
+
+@app.route("/api/register_user", methods=["POST"])
+def register_user():
+    answer = {
+        "id": 201,
+    }  # User Created!
+
+    if request.method != "POST":
+        answer["id"] = 405  # Method Not Allowed
+        return answer
+    request_data = request.get_json()
+    client_email: str = request_data["email"]
+    if client_email in users_data:
+        answer["id"] = 400  # Bad request, repeated user
+        return answer
+    users_data[client_email] = request_data
+
+    if os.path.isfile(PRODUCTS_PATH):
+        with open(USERS_PATH, "w") as outfile:
+            json.dump(users_data, outfile, indent=4)
+
+    return answer
 
 
 @app.route("/api/check_credentials", methods=["POST"])
 def check_credentials():
     client_ip: str = request.remote_addr
     answer = {  # credentials aren't OK!
-        "correct_email": False,
-        "correct_password": False,
         "id": 400,
     }
 
@@ -83,41 +122,20 @@ def check_credentials():
         if user_data["password"] == client_password:
             answer["correct_password"] = True
             answer["id"] = 200  # credentials are OK!
-            users[client_ip] = True
+            logged_users[client_ip] = client_email
 
     return answer
 
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/")
 def index():
-    user_ip = request.remote_addr
+    client_ip = request.remote_addr
+    if not is_logged(client_ip):
+        return redirect(url_for("login"))
 
-    if request.method == "POST":
-        email = request.form.get("email")
-        # print(f"user_data[hash({email})] : {users_data[hash(email)]}")
-        # print(f"users_data : {users_data}")
-        # user_data = users_data[hash(email)]
-        user_data = users_data[email]
-        if email and user_data["email"] == email:
-            if user_data["password"] == request.form.get("password"):
-                users[user_ip] = True
-                context = {"data": user_data, "products": products}
-                return render_template(
-                    "welcome.html", **context, user=user_data["username"], log=True
-                )
-
-            else:
-                flash("Incorrect password")
-                return redirect(url_for("login"))
-        else:
-            flash("User not found")
-            return redirect(url_for("login"))
-    if is_logged(user_ip):  # is logged
-        context = {"data": data, "products": products}
-        return render_template(
-            "welcome.html", **context, user=data["username"], log=True
-        )
-    return redirect(url_for("login"))
+    data = users_data[logged_users[client_ip]]
+    context = {"data": data, "products": products}
+    return render_template("welcome.html", **context, user=data["username"], log=True)
 
 
 @app.route("/login", methods=["POST", "GET"])
@@ -138,16 +156,9 @@ def login():
             user_data[key] = request.form.get(key)
 
         email = user_data["email"]
-        # users_data[hash(email)] = user_data
         users_data[email] = user_data
-        # print(f"user_data[hash({email})] : {users_data[hash(email)]}")
-        print(f"user_data[{email}] : {users_data[email]}")
-        print(f"users_data : {users_data}")
-        # context = {"user_data": user_data}
-        # print(f"before users_data : {users_data}")
         with open(USERS_PATH, "w") as outfile:
-            json.dump(users_data, outfile, indent=4)
-        # print(f"after users_data : {users_data}")
+            json.dump(users_data, outfile, indent=2)
 
         return render_template("login.html")
     return render_template("login.html")
@@ -155,26 +166,26 @@ def login():
 
 @app.route("/register")
 def register():
-    user_ip = request.remote_addr
-    if is_logged(user_ip):
+    client_ip = request.remote_addr
+    if is_logged(client_ip):
         return redirect("/home")
     return render_template("register.html")
 
 
 @app.route("/profile", methods=["POST", "GET"])
 def profile():
-    user_ip = request.remote_addr
-    if not is_logged(user_ip):
+    client_ip = request.remote_addr
+    if not is_logged(client_ip):
         return redirect("/login")
+    data = users_data[logged_users[client_ip]]
     context = {"data": data}
-    if is_logged(user_ip):
-        return render_template("profile.html", **context)
+    return render_template("profile.html", **context)
 
 
 @app.route("/register_product")
 def register_product():
-    user_ip = request.remote_addr
-    if not is_logged(user_ip):
+    client_ip = request.remote_addr
+    if not is_logged(client_ip):
         return redirect("/login")
     context = {"data": data}
     return render_template("register_product.html", **context)
