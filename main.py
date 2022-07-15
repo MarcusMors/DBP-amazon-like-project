@@ -1,19 +1,8 @@
-# from crypt import methods
 import json
 import os
 
 from flask import Flask, flash, redirect, render_template, request, url_for
 from werkzeug.utils import secure_filename
-
-# from typing import Generator
-
-
-# import atexit
-# import urllib.request
-# from xml.etree.ElementTree import tostring
-
-# from flask import Flask, request, make_response, redirect, render_template, url_for
-
 
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpeg", "svg"])
 
@@ -64,12 +53,12 @@ def get_products():
         return answer
 
     request_data = request.get_json()
-    begin, end = request_data["begin"], request_data["end"] + 1
+    begin, end = request_data["begin"], request_data["end"]
     if begin < 0 or end <= begin:
         answer["id"] = 400  # Bad request
         return answer
 
-    answer[products] = products[begin : end - 1]  # [begin:end)
+    answer["products"] = products[begin:end]  # [begin:end)
     return answer
 
 
@@ -101,6 +90,8 @@ def check_credentials():
     client_ip: str = request.remote_addr
     answer = {  # credentials aren't OK!
         "id": 400,
+        "correct_email": False,
+        "correct_password": False,
     }
 
     if request.method != "POST":
@@ -138,29 +129,12 @@ def index():
     return render_template("welcome.html", **context, user=data["username"], log=True)
 
 
-@app.route("/login", methods=["POST", "GET"])
+@app.route("/login")
 def login():
     user_ip = request.remote_addr
     if is_logged(user_ip):
         return redirect(url_for("profile"))
-    if request.method == "POST":
 
-        user_data = {
-            "username": "",
-            "email": "",
-            "password": "",
-            "birthday": "",
-        }
-
-        for key in user_data:
-            user_data[key] = request.form.get(key)
-
-        email = user_data["email"]
-        users_data[email] = user_data
-        with open(USERS_PATH, "w") as outfile:
-            json.dump(users_data, outfile, indent=2)
-
-        return render_template("login.html")
     return render_template("login.html")
 
 

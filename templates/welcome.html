@@ -30,21 +30,7 @@
 </header>
 {%endblock%}{%block content%}
 <div class="contents">
-	<div class="products">
-		<!--  -->
-		{%for product in products%}
-		<a class="product-ref" href="{{url_for('carproduct',filename = product.filename)}}">
-			<div class="product-container">
-				<i class="fa-regular fa-cart-shopping"></i>
-				<img src="images/{{product.filename}}" />
-				<p>{{product.title}}</p>
-				<p>{{product.description}}</p>
-				<p>{{product.price}}</p>
-			</div>
-		</a>
-		{%endfor%}
-		<!--  -->
-	</div>
+	<div id="insert_guide" class="products"></div>
 </div>
 <footer>
 	<span id="load_signal"><!-- <button id="load">Load More Content</button> --></span>
