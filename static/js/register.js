@@ -129,7 +129,7 @@ login_form?.addEventListener("submit", async function (e) {
 				window.location.reload()
 				return
 			}
-			let error_message = "default data"
+			let error_message = ""
 			if (response["id"] === +400) {
 				error_message = "That user already exists or that email is already in use"
 			}

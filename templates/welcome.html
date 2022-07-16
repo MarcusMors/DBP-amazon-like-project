@@ -32,10 +32,30 @@
 <div class="contents">
 	<div id="insert_guide" class="products"></div>
 </div>
-<footer>
-	<span id="load_signal"><!-- <button id="load">Load More Content</button> --></span>
-	<div>YOU ARE WATCHING, THIS, YOU GONNA GET MORE CONTENT</div>
+
+<footer id="load_signal">
+	<div class="foot">
+		<p>
+			<a href="home"
+				><img src="{{url_for('static', filename='assets/logo.svg')}}" alt="logo"
+			/></a>
+		</p>
+		<ul>
+			<li>About us</li>
+			<li>Community</li>
+			<li>Work with us</li>
+			<li>Terms</li>
+			<li>Privacy</li>
+		</ul>
+		<ul>
+			<li>Facebook</li>
+			<li>Instagram</li>
+			<li>Twitter</li>
+			<li>LinkedIn</li>
+		</ul>
+	</div>
 </footer>
+
 <script src="{{url_for('static', filename='js/welcome.js')}}"></script>
 
 {%endblock%}

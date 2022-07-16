@@ -1,146 +1,194 @@
 [
-    {
-        "filename": "imagen1.jpg",
-        "title": "Cargador celular laptop",
-        "description": "Conecta tu celular a tu laptop para cargarla",
-        "price": "15 uwu"
-    },
-    {
-        "filename": "imagen2.jpg",
-        "title": "Laptop acer nitro gamer",
-        "description": "Disfruta la experiencia acer gamer con tecnolog\u00eda de ultra gama, impermeable",
-        "price": "15.000 uwu"
-    },
-    {
-        "filename": "imagen3.jpg",
-        "title": "Cama de perro marca SO",
-        "description": "Engr\u00ede a tu mascota con esta cama para perro de 85cm x 135 cm",
-        "price": "325 uwu"
-    },
-    {
-        "filename": "imagen4.jpg",
-        "title": "Audifonos inalambricos",
-        "description": "Escucha m\u00fasica sin alambres, sin preocupaciones, escuchalo con Micronics",
-        "price": "95 uwu"
-    },
-    {
-        "filename": "imagen5.jpg",
-        "title": "C\u00e1mara Lumix",
-        "description": "Captura los mejores momentos de tu vida en alta definici\u00f3n",
-        "price": "4.500 uwu"
-    },
-    {
-        "filename": "imagen6.jpg",
-        "title": "Lentes Anyluv olor a menta",
-        "description": "Domina la jerarqu\u00eda del inconsciente y d\u00e1 una imagen de intelectual con lentes Anyluv",
-        "price": "99 uwu"
-    },
-    {
-        "filename": "imagen7.jpg",
-        "title": "Juego animal crossing",
-        "description": "Relajate en este mundo de fantas\u00eda y danos tu dinero mientras pierdes tu vida",
-        "price": "175 uwu"
-    },
-    {
-        "filename": "imagen8.jpg",
-        "title": "Smart echo dot speaker/microphone",
-        "description": "Interact\u00faa con el mundo desde la comodidad de tu casa",
-        "price": "875 uwu"
-    },
-    {
-        "filename": "imagen9.jpg",
-        "title": "Zapatillas T blancas",
-        "description": "Corre como flash, corre como the big T man",
-        "price": "15 uwu"
-    },
-    {
-        "filename":"imagen10.jpg",
-        "title": "Apple iPhone 12 Pro",
-        "description": "Totalmente desbloqueado y compatible con cualquier operador de su elecci\u00f3n",
-        "price": "3569 uwu"
-    },
-    {
-        "filename":"imagen11.jpg",
-        "title": "Invicta Men's 12845 Specialty Reloj",
-        "description": "Este reloj Invicta est\u00E1 protegido por vidrio de fusi\u00f3n por llama",
-        "price": "235 uwu"
-    },
-    {
-        "filename":"imagen12.jpg",
-        "title": "Gafas de sol polarizadas",
-        "description": "Proteje tus ojos del sol con estilo ",
-        "price": "125 uwu"
-    },
-    {
-        "filename":"imagen13.jpg",
-        "title": "Modern Painting Wall Art Poster",
-        "description": "La obra de arte en lienzo es una buena opci\u00f3n para todo tipo de evento",
-        "price": "765 uwu"
-    },
-    {
-        "filename":"imagen14.jpg",
-        "title": "Peluche Grogu mandaloriano Star Wars",
-        "description": "El personaje lleva su t\u00FAnica, como se ve en la serie",
-        "price": "165 uwu"
-    },
-    {
-        "filename":"imagen15.jpg",
-        "title": "Tommy Hilfiger Set",
-        "description": "Set de regalo para este clima frio",
-        "price": "485 uwu"
-    },
-    {
-        "filename":"imagen16.jpg",
-        "title": "Optimus Prime Funko Pop!",
-        "description": "De Transfomers, el Metallic Optimus Prime Funko Pop exclusivo de Uwuzon.",
-        "price": "99 uwu"
-    },
-    {
-        "filename":"imagen17.jpg",
-        "title": "Mouse Razer Viper Mini",
-        "description": "Experimenta un rendimiento impactante con nuestro mouse m\u00E1s ligero jam\u00E1s creado",
-        "price": "155 uwu"
-    },
-    {
-        "filename":"imagen18.jpg",
-        "title": "Newest Android 11.0 Tablet",
-        "description": "La mejor tableta Android 11.0 admite un reemplazo gratuito de 1 mes y una garant\u00EDa de un a\u00F1o",
-        "price": "915 uwu"
-    },
-    {
-        "filename":"imagen19.jpg",
-        "title": "Espejo de bicicleta",
-        "description": "Reflector impreso en la parte posterior, seguro por la noche",
-        "price": "155 uwu"
-    },
-    {
-        "filename":"imagen20.jpg",
-        "title": "Smart Mountain Bike Helmet",
-        "description": "Le permite hablar con otros ciclistas y escuchar m\u00FAsica",
-        "price": "909 uwu"
-    },
-    {
-        "filename":"imagen21.jpg",
-        "title": "LED Floor Lamp",
-        "description": "las l\u00E1mparas mezclan 3 temperaturas de color para crear la iluminaci\u00F3n mas adecuada para su actividad",
-        "price": "748 uwu"
-    },
-    {
-        "filename":"imagen22.jpg",
-        "title": "Nintendo Switch Controller",
-        "description": "Mejora las sesiones de juego con el mando Pro de Nintendo Switch",
-        "price": "275 uwu"
-    },
-    {
-        "filename":"imagen23.jpg",
-        "title": "Michael Kors 0MK2023",
-        "description": "Revestimiento de protecci\u00F3n UV no polarizado",
-        "price": "299 uwu"
-    },
-    {
-        "filename":"imagen24.jpg",
-        "title": "Kreative Arts Large Canvas Print",
-        "description": "Lienzo brillante de alta calidad con durabilidad duradera Impreso a alta resoluci\u00F3n",
-        "price": "499 uwu"
-    }
+	{
+		"filename": "imagen1.jpg",
+		"title": "Cargador celular laptop",
+		"description": "Conecta tu celular a tu laptop para cargarla",
+		"price": "15 uwu"
+	},
+	{
+		"filename": "imagen2.jpg",
+		"title": "Laptop acer nitro gamer",
+		"description": "Disfruta la experiencia acer gamer con tecnolog\u00eda de ultra gama, impermeable",
+		"price": "15.000 uwu"
+	},
+	{
+		"filename": "imagen3.jpg",
+		"title": "Cama de perro marca SO",
+		"description": "Engr\u00ede a tu mascota con esta cama para perro de 85cm x 135 cm",
+		"price": "325 uwu"
+	},
+	{
+		"filename": "imagen4.jpg",
+		"title": "Audifonos inalambricos",
+		"description": "Escucha m\u00fasica sin alambres, sin preocupaciones, escuchalo con Micronics",
+		"price": "95 uwu"
+	},
+	{
+		"filename": "imagen5.jpg",
+		"title": "C\u00e1mara Lumix",
+		"description": "Captura los mejores momentos de tu vida en alta definici\u00f3n",
+		"price": "4.500 uwu"
+	},
+	{
+		"filename": "imagen6.jpg",
+		"title": "Lentes Anyluv olor a menta",
+		"description": "Domina la jerarqu\u00eda del inconsciente y d\u00e1 una imagen de intelectual con lentes Anyluv",
+		"price": "99 uwu"
+	},
+	{
+		"filename": "imagen7.jpg",
+		"title": "Juego animal crossing",
+		"description": "Relajate en este mundo de fantas\u00eda y danos tu dinero mientras pierdes tu vida",
+		"price": "175 uwu"
+	},
+	{
+		"filename": "imagen8.jpg",
+		"title": "Smart echo dot speaker/microphone",
+		"description": "Interact\u00faa con el mundo desde la comodidad de tu casa",
+		"price": "875 uwu"
+	},
+	{
+		"filename": "imagen9.jpg",
+		"title": "Zapatillas T blancas",
+		"description": "Corre como flash, corre como the big T man",
+		"price": "15 uwu"
+	},
+	{
+		"filename": "imagen10.jpg",
+		"title": "Apple iPhone 12 Pro",
+		"description": "Totalmente desbloqueado y compatible con cualquier operador de su elecci\u00f3n",
+		"price": "3569 uwu"
+	},
+	{
+		"filename": "imagen11.jpg",
+		"title": "Invicta Men's 12845 Specialty Reloj",
+		"description": "Este reloj Invicta est\u00E1 protegido por vidrio de fusi\u00f3n por llama",
+		"price": "235 uwu"
+	},
+	{
+		"filename": "imagen12.jpg",
+		"title": "Gafas de sol polarizadas",
+		"description": "Proteje tus ojos del sol con estilo ",
+		"price": "125 uwu"
+	},
+	{
+		"filename": "imagen13.jpg",
+		"title": "Modern Painting Wall Art Poster",
+		"description": "La obra de arte en lienzo es una buena opci\u00f3n para todo tipo de evento",
+		"price": "765 uwu"
+	},
+	{
+		"filename": "imagen14.jpg",
+		"title": "Peluche Grogu mandaloriano Star Wars",
+		"description": "El personaje lleva su t\u00FAnica, como se ve en la serie",
+		"price": "165 uwu"
+	},
+	{
+		"filename": "imagen15.jpg",
+		"title": "Tommy Hilfiger Set",
+		"description": "Set de regalo para este clima frio",
+		"price": "485 uwu"
+	},
+	{
+		"filename": "imagen16.jpg",
+		"title": "Optimus Prime Funko Pop!",
+		"description": "De Transfomers, el Metallic Optimus Prime Funko Pop exclusivo de Uwuzon.",
+		"price": "99 uwu"
+	},
+	{
+		"filename": "imagen17.jpg",
+		"title": "Mouse Razer Viper Mini",
+		"description": "Experimenta un rendimiento impactante con nuestro mouse m\u00E1s ligero jam\u00E1s creado",
+		"price": "155 uwu"
+	},
+	{
+		"filename": "imagen18.jpg",
+		"title": "Newest Android 11.0 Tablet",
+		"description": "La mejor tableta Android 11.0 admite un reemplazo gratuito de 1 mes y una garant\u00EDa de un a\u00F1o",
+		"price": "915 uwu"
+	},
+	{
+		"filename": "imagen19.jpg",
+		"title": "Espejo de bicicleta",
+		"description": "Reflector impreso en la parte posterior, seguro por la noche",
+		"price": "155 uwu"
+	},
+	{
+		"filename": "imagen20.jpg",
+		"title": "Smart Mountain Bike Helmet",
+		"description": "Le permite hablar con otros ciclistas y escuchar m\u00FAsica",
+		"price": "909 uwu"
+	},
+	{
+		"filename": "imagen21.jpg",
+		"title": "LED Floor Lamp",
+		"description": "las l\u00E1mparas mezclan 3 temperaturas de color para crear la iluminaci\u00F3n mas adecuada para su actividad",
+		"price": "748 uwu"
+	},
+	{
+		"filename": "imagen22.jpg",
+		"title": "Nintendo Switch Controller",
+		"description": "Mejora las sesiones de juego con el mando Pro de Nintendo Switch",
+		"price": "275 uwu"
+	},
+	{
+		"filename": "imagen23.jpg",
+		"title": "Michael Kors 0MK2023",
+		"description": "Revestimiento de protecci\u00F3n UV no polarizado",
+		"price": "299 uwu"
+	},
+	{
+		"filename": "imagen24.jpg",
+		"title": "Kreative Arts Large Canvas Print",
+		"description": "Lienzo brillante de alta calidad con durabilidad duradera Impreso a alta resoluci\u00F3n",
+		"price": "499 uwu"
+	},
+	{
+		"filename": "imagen25.jpg",
+		"title": "Mochila verde fashionable skia",
+		"description": "Finge ser fin el aventurero simpatico y misio al que lo dejan todas",
+		"price": "1000 uwu"
+	},
+	{
+		"filename": "imagen26.jpg",
+		"title": "Muneco fuko pop edición día del padre",
+		"description": "Celebra a tu padre que se fue a comprar leche y aún no vuelve con esta caja, digo muneco",
+		"price": "626 uwu"
+	},
+	{
+		"filename": "imagen1.jpg",
+		"title": "Cargador celular laptop",
+		"description": "Conecta tu celular a tu laptop para cargarla",
+		"price": "15 uwu"
+	},
+	{
+		"filename": "imagen2.jpg",
+		"title": "Laptop acer nitro gamer",
+		"description": "Disfruta la experiencia acer gamer con tecnolog\u00eda de ultra gama, impermeable",
+		"price": "15.000 uwu"
+	},
+	{
+		"filename": "imagen3.jpg",
+		"title": "Cama de perro marca SO",
+		"description": "Engr\u00ede a tu mascota con esta cama para perro de 85cm x 135 cm",
+		"price": "325 uwu"
+	},
+	{
+		"filename": "imagen4.jpg",
+		"title": "Audifonos inalambricos",
+		"description": "Escucha m\u00fasica sin alambres, sin preocupaciones, escuchalo con Micronics",
+		"price": "95 uwu"
+	},
+	{
+		"filename": "imagen5.jpg",
+		"title": "C\u00e1mara Lumix",
+		"description": "Captura los mejores momentos de tu vida en alta definici\u00f3n",
+		"price": "4.500 uwu"
+	},
+	{
+		"filename": "imagen6.jpg",
+		"title": "Lentes Anyluv olor a menta",
+		"description": "Domina la jerarqu\u00eda del inconsciente y d\u00e1 una imagen de intelectual con lentes Anyluv",
+		"price": "99 uwu"
+	}
 ]

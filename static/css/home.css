@@ -121,3 +121,26 @@ button{
     text-align: left;
     background-color: #ffa43f;
 }
+
+
+/* footer {
+  height: 50vh;
+  background-color: #131921;
+  color: white;
+} */
+
+.foot
+{
+    min-height: 35vh;
+    max-height: 50vh;
+    color: white;
+    background-color: #131921;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+ul
+{
+    margin: 30px 0px 0px 0px;
+    list-style: none;
+}

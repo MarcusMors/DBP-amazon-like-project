@@ -70,8 +70,7 @@ function get_data(t_begin, t_end) {
 		})
 }
 
-const [begin, end] = [0, 9]
-get_data(begin, end)
+let [begin, end] = [0, 9]
 
 let signal_element = document.getElementById("load_signal")
 // let load_button = document.getElementById("load")
@@ -84,3 +83,21 @@ function set_error_message(t_error_message_element, t_error_message) {
 	t_error_message_element.textContent = ""
 	t_error_message_element.textContent = t_error_message
 }
+
+const t_threshold = 0.35
+
+function handler(entries) {
+	const entry = entries[0]
+	// const is_visible = entry.intersectionRation >= t_threshold
+	console.log(entry)
+	// if (is_visible) {
+	console.log("IS FUCKING VISIBLE")
+	get_data(begin, end)
+	begin = end
+	end = end + 6
+	// }
+}
+
+const config = { threshold: t_threshold }
+const observer = new IntersectionObserver(handler, config)
+observer.observe(signal_element)

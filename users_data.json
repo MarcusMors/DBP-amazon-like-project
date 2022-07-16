@@ -10,5 +10,23 @@
         "email": "test_mail@mors.com",
         "password": "test_password",
         "birthday": "2022-07-01"
+    },
+    "test_mail@mors.comasd": {
+        "username": "test_userasd",
+        "email": "test_mail@mors.comasd",
+        "password": "test_password",
+        "birthday": "2022-07-01"
+    },
+    "test_mailasdasd@mors": {
+        "username": "test_userasd",
+        "email": "test_mailasdasd@mors",
+        "password": "test_password",
+        "birthday": "2022-07-01"
+    },
+    "rioda@gmail.com": {
+        "username": "sadasd",
+        "email": "rioda@gmail.com",
+        "password": "uV4r35FTn9i7",
+        "birthday": "2022-07-01"
     }
 }
